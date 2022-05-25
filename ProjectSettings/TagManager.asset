@@ -11,6 +11,21 @@ TagManager:
   - finish
   - collectible
   - elmas
+  - SamanBalyasi
+  - ToplanmisSamanBalyasi
+  - Ambar
+  - SirtCantasi
+  - AltinMadeni
+  - Kasap
+  - Altin
+  - ToplanmisAltin
+  - Et
+  - ToplanmisEt
+  - Kisla
+  - Demir
+  - ToplanmisDemir
+  - DemirMadeni
+  - Demirci
   layers:
   - Default
   - TransparentFX
