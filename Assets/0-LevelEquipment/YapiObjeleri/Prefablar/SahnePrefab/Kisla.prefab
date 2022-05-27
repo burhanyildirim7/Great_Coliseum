@@ -3098,13 +3098,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5768853833389806243}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6f538e72d22654054b2b8940e582278f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _urunSpawnNoktasi: {fileID: 2477801521085093283}
-  _urunPrefab: {fileID: 0}
+  _urunPrefab: {fileID: 4725495433348743598, guid: 6c4cb25ee4e0e4e9f85e4353fcdcdcb4, type: 3}
   _dizilecekTransforms:
   - {fileID: 6278709474167027268}
   - {fileID: 72020509207446355}
