@@ -26,6 +26,7 @@ TagManager:
   - ToplanmisDemir
   - DemirMadeni
   - Demirci
+  - ArastirmaBinasi
   layers:
   - Default
   - TransparentFX
