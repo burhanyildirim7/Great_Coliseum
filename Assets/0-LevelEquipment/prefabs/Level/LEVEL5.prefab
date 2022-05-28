@@ -84,6 +84,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ArastirmaTezgahi
       objectReference: {fileID: 0}
+    - target: {fileID: 5104832167257805450, guid: 4162e72f779ab4e62966009bc059a45d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5359494954110997615, guid: 4162e72f779ab4e62966009bc059a45d, type: 3}
       propertyPath: _arastirmaSayisi
       value: 1
@@ -146,6 +150,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5466873179471882174, guid: 4162e72f779ab4e62966009bc059a45d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7231769104324854036, guid: 4162e72f779ab4e62966009bc059a45d, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

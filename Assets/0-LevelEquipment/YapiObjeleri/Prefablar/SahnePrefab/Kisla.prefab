@@ -5608,6 +5608,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: kisla (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1388897122492046623, guid: 22b97f9fbdd9348568b490d03b59d404, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1733193432194811813, guid: 22b97f9fbdd9348568b490d03b59d404, type: 3}
       propertyPath: m_RootOrder
       value: 5
