@@ -289,6 +289,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 875291335512714119}
     m_Modifications:
+    - target: {fileID: 2042670361038012899, guid: 3ffceb84e87e1492da854f3dfdfe864e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042670361038012899, guid: 3ffceb84e87e1492da854f3dfdfe864e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2923236542428478281, guid: 3ffceb84e87e1492da854f3dfdfe864e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2923236542428478281, guid: 3ffceb84e87e1492da854f3dfdfe864e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3350473125077357372, guid: 3ffceb84e87e1492da854f3dfdfe864e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3350473125077357372, guid: 3ffceb84e87e1492da854f3dfdfe864e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3350473125442928127, guid: 3ffceb84e87e1492da854f3dfdfe864e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3350473125442928127, guid: 3ffceb84e87e1492da854f3dfdfe864e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3350473125675768697, guid: 3ffceb84e87e1492da854f3dfdfe864e, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3350473125675768697, guid: 3ffceb84e87e1492da854f3dfdfe864e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6363677540180031377, guid: 3ffceb84e87e1492da854f3dfdfe864e, type: 3}
       propertyPath: _ambarObject
       value: 

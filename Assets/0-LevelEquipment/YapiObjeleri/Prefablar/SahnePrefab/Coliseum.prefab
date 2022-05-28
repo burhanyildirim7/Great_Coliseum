@@ -282,7 +282,7 @@ GameObject:
   - component: {fileID: 8720962488955844134}
   - component: {fileID: 5664311417122499530}
   - component: {fileID: 2013125363004710756}
-  - component: {fileID: 8944676851423306829}
+  - component: {fileID: 5171611144010238008}
   m_Layer: 0
   m_Name: ColiseumKontrolNoktasi
   m_TagString: Untagged
@@ -297,14 +297,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2341081774401605782}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 1.93, y: -0, z: -1.44}
-  m_LocalScale: {x: 3.8514, y: 1, z: 7.4016}
+  m_LocalRotation: {x: 0, y: -0.258819, z: 0, w: 0.9659259}
+  m_LocalPosition: {x: 2.63, y: 0, z: -2.19}
+  m_LocalScale: {x: 2.3284, y: 0.077927, z: 1.6081}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5821203140950251403}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -30, z: 0}
 --- !u!33 &5445634906474736668
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -320,7 +320,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2341081774401605782}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -393,7 +393,7 @@ MonoBehaviour:
   _gerekliAltinSayisi: 0
   _gerekliGladyatorSayisi: 0
   _malKabulNoktasi: {fileID: 5024648578704157740}
---- !u!65 &8944676851423306829
+--- !u!65 &5171611144010238008
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -404,8 +404,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.38431388, y: 6.1440153, z: 0.32523277}
-  m_Center: {x: -0.19659936, y: 0.90054846, z: 0.30837595}
+  m_Size: {x: 1.0000001, y: 1, z: 0.99999994}
+  m_Center: {x: -0.000000059604645, y: 0, z: 0}
 --- !u!1 &5036329749640425735
 GameObject:
   m_ObjectHideFlags: 0
@@ -1237,7 +1237,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8681391777657107266}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
