@@ -18,22 +18,32 @@ public class AmbarSpawnScript : MonoBehaviour
     [Header("Spawn Olacak Urun Parent")]
     public GameObject _urunParent;
 
+    public static int _aktifTarlaSayisi;
 
     private float _timer;
     public int _ambarUrunSayisi;
     private int _bosSpawnNoktasi;
 
 
+    private void Start()
+    {
+        _aktifTarlaSayisi = 0;
+    }
+
     void Update()
     {
         _timer += Time.deltaTime;
+
+
+
+        //Debug.Log(_aktifTarlaSayisi);
 
         if (_olusanUrunler.Count < 45)
         {
             if (_timer > _ambarSpawnHizi)
             {
 
-
+                AmbarHiziGüncelle();
 
                 if (_olusanUrunler.Count == _ambarUrunSayisi)
                 {
@@ -100,6 +110,8 @@ public class AmbarSpawnScript : MonoBehaviour
             if (_timer > _ambarSpawnHizi)
             {
 
+                AmbarHiziGüncelle();
+
                 for (int i = 0; i < _olusanUrunler.Count; i++)
                 {
 
@@ -143,6 +155,34 @@ public class AmbarSpawnScript : MonoBehaviour
 
                 _timer = 0;
             }
+        }
+    }
+
+    private void AmbarHiziGüncelle()
+    {
+        if (_aktifTarlaSayisi == 1)
+        {
+            _ambarSpawnHizi = 5;
+        }
+        else if (_aktifTarlaSayisi == 2)
+        {
+            _ambarSpawnHizi = 4;
+        }
+        else if (_aktifTarlaSayisi == 3)
+        {
+            _ambarSpawnHizi = 3;
+        }
+        else if (_aktifTarlaSayisi == 4)
+        {
+            _ambarSpawnHizi = 2;
+        }
+        else if (_aktifTarlaSayisi == 5)
+        {
+            _ambarSpawnHizi = 1;
+        }
+        else
+        {
+
         }
     }
 }

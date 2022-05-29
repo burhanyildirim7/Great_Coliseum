@@ -7214,8 +7214,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 3.9219005, z: 0.9999999}
+  m_Center: {x: 0, y: 1.4609479, z: 0}
 --- !u!54 &422405745028822900
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7254,6 +7254,7 @@ MonoBehaviour:
   _altinIhtiyacText: {fileID: 4414154594416782604}
   _demirIhtiyacText: {fileID: 6294965093880433769}
   _ilkArastirmaAcilacakBinaObject: {fileID: 0}
+  _canvasObject: {fileID: 5460914750495848401}
 --- !u!1 &8679591634453059305
 GameObject:
   m_ObjectHideFlags: 0

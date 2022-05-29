@@ -718,7 +718,7 @@ MonoBehaviour:
   - {fileID: 8237238844005704342}
   - {fileID: 9072337558028553156}
   - {fileID: 3471096897223084545}
-  _ambarSpawnHizi: 0.5
+  _ambarSpawnHizi: 5
   _olusanUrunler: []
   _urunParent: {fileID: 1356986224744108835}
   _ambarUrunSayisi: 0

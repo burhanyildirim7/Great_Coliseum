@@ -8,6 +8,7 @@ public class MadenKontrolNoktasiScript : MonoBehaviour
 
     [Header("Acilmasi İcin İhtiyac Olan Malzemelerin Sayi Texti")]
     public Text _ihtiyacText;
+    public Text _gerekliUrunSayisiText;
     [Header("Acilmasi İcin İhtiyac Olan Malzeme Sayisi")]
     public int _gerekliMalzemeSayisi;
     [Header("Malzeme Tamamlaninca Acilacak Maden Objesi")]
@@ -18,6 +19,11 @@ public class MadenKontrolNoktasiScript : MonoBehaviour
     public GameObject _mekanikObjesi;
     [Header("Mal Kabul Objesi")]
     public GameObject _malKabulObjesi;
+    [Header("İcerisindeki Canvas Objeleri")]
+    [SerializeField] private GameObject _kapanacakCanvas;
+    [SerializeField] private GameObject _acilacakCanvas;
+    [Header("İcerisindeki Spawn Script")]
+    [SerializeField] private AltinMadeniSpawnScript _altinMadeniSpawnScript;
 
 
     private int _toplananMalzemeSayisi;
@@ -27,6 +33,8 @@ public class MadenKontrolNoktasiScript : MonoBehaviour
 
     private float _timer;
 
+    private bool _calisiyor;
+
 
     void Start()
     {
@@ -34,11 +42,16 @@ public class MadenKontrolNoktasiScript : MonoBehaviour
         _madenObject.SetActive(false);
         _mekanikObjesi.SetActive(false);
         _malKabulObjesi.GetComponent<MeshRenderer>().enabled = false;
+        _kapanacakCanvas.SetActive(true);
+        _acilacakCanvas.SetActive(false);
+        _calisiyor = false;
 
         _sirtCantasiScript = GameObject.FindGameObjectWithTag("Player").GetComponent<SirtCantasiScript>();
         _playerRigidbody = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>();
         _meshRenderer = GetComponent<MeshRenderer>();
         _ihtiyacText.text = _gerekliMalzemeSayisi.ToString();
+
+
 
 
         _timer = 0;
@@ -96,18 +109,58 @@ public class MadenKontrolNoktasiScript : MonoBehaviour
                 }
                 else
                 {
+                    if (_calisiyor == false)
+                    {
+                        _kapanacakCanvas.SetActive(false);
+                        _acilacakCanvas.SetActive(true);
+                        _madenObject.SetActive(true);
+                        _mekanikObjesi.SetActive(true);
+                        _malKabulObjesi.GetComponent<MeshRenderer>().enabled = true;
+                        _meshRenderer.enabled = false;
+                        _ihtiyacText.gameObject.SetActive(false);
+                        _gerekliUrunSayisiText.text = _altinMadeniSpawnScript._gerekliUrunSayisi.ToString();
+                        _calisiyor = true;
+                    }
+                    else
+                    {
+                        if (_altinMadeniSpawnScript._gerekliUrunSayisi < 10)
+                        {
+                            _timer += Time.deltaTime;
 
-                    _madenObject.SetActive(true);
-                    _mekanikObjesi.SetActive(true);
-                    _malKabulObjesi.GetComponent<MeshRenderer>().enabled = true;
-                    _meshRenderer.enabled = false;
-                    _ihtiyacText.gameObject.SetActive(false);
+                            if (_timer > 0.1f)
+                            {
+                                if (_sirtCantasiScript._cantadakiSamanObjeleri.Count > 0)
+                                {
+                                    _sirtCantasiScript.SamanCek(_malKabulNoktasi);
+                                    _altinMadeniSpawnScript._gerekliUrunSayisi++;
+                                    _gerekliUrunSayisiText.text = _altinMadeniSpawnScript._gerekliUrunSayisi.ToString();
+                                    //_ihtiyacText.text = _gerekliMalzemeSayisi.ToString();
+                                    _timer = 0;
+                                }
+                                else
+                                {
+
+                                }
+
+                            }
+                            else
+                            {
+
+                            }
+                        }
+                        else
+                        {
+
+                        }
+                    }
 
                 }
 
             }
             else
             {
+
+
 
             }
 

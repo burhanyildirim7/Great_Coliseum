@@ -21,6 +21,8 @@ public class TarlaScript : MonoBehaviour
     public bool _sonrasindaTarlaVarMi;
     [Header("Sonrasinda Tarla Varsa Tarla Objesi")]
     public GameObject _sonrakiTarlaObject;
+    [Header("Icerisindeki Canvas Objesi")]
+    [SerializeField] private GameObject _canvasObject;
 
 
 
@@ -31,12 +33,16 @@ public class TarlaScript : MonoBehaviour
 
     private float _timer;
 
+    private bool _tarlaSayisiArtirildi;
+
 
     void Start()
     {
 
 
         _tarlaObject.SetActive(false);
+        _canvasObject.SetActive(true);
+        _tarlaSayisiArtirildi = false;
 
         _sirtCantasiScript = GameObject.FindGameObjectWithTag("Player").GetComponent<SirtCantasiScript>();
         _playerRigidbody = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>();
@@ -129,6 +135,18 @@ public class TarlaScript : MonoBehaviour
                     _tarlaObject.SetActive(true);
                     _meshRenderer.enabled = false;
                     _ihtiyacText.gameObject.SetActive(false);
+                    _canvasObject.SetActive(false);
+
+                    if (_tarlaSayisiArtirildi == false)
+                    {
+                        AmbarSpawnScript._aktifTarlaSayisi++;
+                        _tarlaSayisiArtirildi = true;
+                    }
+                    else
+                    {
+
+                    }
+
 
                     if (_sonrasindaTarlaVarMi)
                     {

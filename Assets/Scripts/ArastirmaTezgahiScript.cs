@@ -21,6 +21,8 @@ public class ArastirmaTezgahiScript : MonoBehaviour
     public Text _demirIhtiyacText;
     [Header("Arastirinca Acilacak Bina")]
     public GameObject _ilkArastirmaAcilacakBinaObject;
+    [Header("Icerisindeki Canvas Objesi")]
+    [SerializeField] private GameObject _canvasObject;
 
 
     private int _ilkArastirmaToplananSamanSayisi;
@@ -36,7 +38,7 @@ public class ArastirmaTezgahiScript : MonoBehaviour
     void Start()
     {
 
-
+        _canvasObject.SetActive(true);
         _ilkArastirmaAcilacakBinaObject.SetActive(false);
 
         _sirtCantasiScript = GameObject.FindGameObjectWithTag("Player").GetComponent<SirtCantasiScript>();
@@ -133,6 +135,7 @@ public class ArastirmaTezgahiScript : MonoBehaviour
                     else
                     {
                         _ilkArastirmaAcilacakBinaObject.SetActive(true);
+                        _canvasObject.SetActive(false);
                     }
                 }
                 else
