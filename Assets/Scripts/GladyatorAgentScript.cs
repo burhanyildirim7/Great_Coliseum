@@ -71,6 +71,7 @@ public class GladyatorAgentScript : MonoBehaviour
                         if (_altinMadeniSpawnScript._olusanUrunler[i] != null)
                         {
                             Destroy(_altinMadeniSpawnScript._olusanUrunler[i].gameObject);
+                            break;
                         }
                         else
                         {

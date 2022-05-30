@@ -44,6 +44,8 @@ public class TarlaScript : MonoBehaviour
 
     private bool _calisiyor;
 
+    private bool _aktifMi;
+
 
     void Start()
     {
@@ -52,6 +54,7 @@ public class TarlaScript : MonoBehaviour
         _tarlaObject.SetActive(false);
         _canvasObject.SetActive(true);
         _tarlaSayisiArtirildi = false;
+        _aktifMi = false;
 
         _sirtCantasiScript = GameObject.FindGameObjectWithTag("Player").GetComponent<SirtCantasiScript>();
         _playerRigidbody = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>();
@@ -208,11 +211,20 @@ public class TarlaScript : MonoBehaviour
                         Debug.Log("Ambar Acilamadi");
                     }
 
-                    _tarlaObject.SetActive(true);
-                    _meshRenderer.enabled = false;
-                    _ihtiyacText.gameObject.SetActive(false);
-                    _canvasObject.SetActive(false);
-                    _aclikSlider.value = 1;
+                    if (_aktifMi == false)
+                    {
+                        _tarlaObject.SetActive(true);
+                        _meshRenderer.enabled = false;
+                        _ihtiyacText.gameObject.SetActive(false);
+                        _canvasObject.SetActive(false);
+                        _aclikSlider.value = 1;
+                        _aktifMi = true;
+                    }
+                    else
+                    {
+
+                    }
+
 
                     if (_tarlaSayisiArtirildi == false)
                     {
