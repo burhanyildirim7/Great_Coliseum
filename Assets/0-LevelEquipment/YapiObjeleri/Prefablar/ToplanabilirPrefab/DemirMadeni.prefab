@@ -317,7 +317,7 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 300
-    m_Alignment: 3
+    m_Alignment: 4
     m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -1930,12 +1930,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ihtiyacSamanText: {fileID: 2297514365586073819}
   _ihtiyacAltinText: {fileID: 2399451383317851115}
+  _gerekliUrunSayisiText: {fileID: 7831649069872815423}
   _gerekliSamanSayisi: 50
   _gerekliAltinSayisi: 25
   _demirMadeniObject: {fileID: 5912434889925934724}
   _malKabulNoktasi: {fileID: 4568751128156225206}
   _mekanikObjesi: {fileID: 5960415804496168602}
   _malKabulObjesi: {fileID: 6549989124338839449}
+  _kapanacakCanvas: {fileID: 4066722297536503804}
+  _acilacakCanvas: {fileID: 3544207718199431785}
+  _kasapSpawnScript: {fileID: 8609058676133452022}
 --- !u!1 &3211460377790600742
 GameObject:
   m_ObjectHideFlags: 0
@@ -2658,7 +2662,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4238295186903960829}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.635, y: 0.851, z: -6.023}
+  m_LocalPosition: {x: -3.52, y: 0.851, z: -6.39}
   m_LocalScale: {x: 0.099999994, y: 0.099999994, z: 0.099999994}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3120,7 +3124,7 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 300
-    m_Alignment: 3
+    m_Alignment: 4
     m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -4039,9 +4043,11 @@ MonoBehaviour:
   - {fileID: 8576221545893881061}
   - {fileID: 5649167945058350413}
   - {fileID: 7723668928624684288}
-  _ambarSpawnHizi: 1
+  _ambarSpawnHizi: 5
   _olusanUrunler: []
   _urunParent: {fileID: 8440536807450309157}
+  _gerekliUrunSayisi: 0
+  _gerekliUrunSayisiText: {fileID: 7831649069872815423}
   _ambarUrunSayisi: 0
 --- !u!1 &6203328632601782956
 GameObject:
@@ -4394,7 +4400,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6549989124338839449}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.14, y: 0, z: -8.37}
+  m_LocalPosition: {x: -4.14, y: 0, z: -9.23}
   m_LocalScale: {x: 4, y: 0.099999994, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:

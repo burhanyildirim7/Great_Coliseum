@@ -8,6 +8,7 @@ public class KislaKontrolNoktasiScript : MonoBehaviour
     [Header("Acilmasi İcin İhtiyac Olan Malzemelerin Sayi Texti")]
     public Text _ihtiyacSamanText;
     public Text _ihtiyacAltinText;
+    public Text _gerekliUrunSayisiText;
     [Header("Acilmasi İcin İhtiyac Olan Malzeme Sayisi")]
     public int _gerekliSamanSayisi;
     public int _gerekliAltinSayisi;
@@ -19,6 +20,11 @@ public class KislaKontrolNoktasiScript : MonoBehaviour
     public GameObject _mekanikObjesi;
     [Header("Mal Kabul Objesi")]
     public GameObject _malKabulObjesi;
+    [Header("İcerisindeki Canvas Objeleri")]
+    [SerializeField] private GameObject _kapanacakCanvas;
+    [SerializeField] private GameObject _acilacakCanvas;
+    [Header("İcerisindeki Spawn Script")]
+    [SerializeField] private KislaSpawnScript _kasapSpawnScript;
 
 
     private int _toplananMalzemeSayisi;
@@ -28,6 +34,7 @@ public class KislaKontrolNoktasiScript : MonoBehaviour
 
     private float _timer;
 
+    private bool _calisiyor;
 
     void Start()
     {
@@ -35,6 +42,8 @@ public class KislaKontrolNoktasiScript : MonoBehaviour
         _kislaObject.SetActive(false);
         _mekanikObjesi.SetActive(false);
         _malKabulObjesi.GetComponent<MeshRenderer>().enabled = false;
+        _kapanacakCanvas.SetActive(true);
+        _acilacakCanvas.SetActive(false);
 
         _sirtCantasiScript = GameObject.FindGameObjectWithTag("Player").GetComponent<SirtCantasiScript>();
         _playerRigidbody = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>();
@@ -42,15 +51,10 @@ public class KislaKontrolNoktasiScript : MonoBehaviour
         _ihtiyacSamanText.text = _gerekliSamanSayisi.ToString();
         _ihtiyacAltinText.text = _gerekliAltinSayisi.ToString();
 
-
+        _calisiyor = false;
         _timer = 0;
     }
 
-
-    void Update()
-    {
-
-    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -129,13 +133,52 @@ public class KislaKontrolNoktasiScript : MonoBehaviour
                 }
                 else
                 {
+                    if (_calisiyor == false)
+                    {
+                        _kislaObject.SetActive(true);
+                        _mekanikObjesi.SetActive(true);
+                        //_malKabulObjesi.GetComponent<MeshRenderer>().enabled = true;
+                        _meshRenderer.enabled = false;
+                        _ihtiyacSamanText.gameObject.SetActive(false);
+                        _ihtiyacAltinText.gameObject.SetActive(false);
+                        _kapanacakCanvas.SetActive(false);
+                        _acilacakCanvas.SetActive(true);
+                        _gerekliUrunSayisiText.text = _kasapSpawnScript._gerekliUrunSayisi.ToString();
+                        _calisiyor = true;
+                    }
+                    else
+                    {
+                        if (_kasapSpawnScript._gerekliUrunSayisi < 10)
+                        {
+                            _timer += Time.deltaTime;
 
-                    _kislaObject.SetActive(true);
-                    _mekanikObjesi.SetActive(true);
-                    _malKabulObjesi.GetComponent<MeshRenderer>().enabled = true;
-                    _meshRenderer.enabled = false;
-                    _ihtiyacSamanText.gameObject.SetActive(false);
-                    _ihtiyacAltinText.gameObject.SetActive(false);
+                            if (_timer > 0.1f)
+                            {
+                                if (_sirtCantasiScript._cantadakiAltinObjeleri.Count > 0)
+                                {
+                                    _sirtCantasiScript.AltinCek(_malKabulNoktasi);
+                                    _kasapSpawnScript._gerekliUrunSayisi++;
+                                    _gerekliUrunSayisiText.text = _kasapSpawnScript._gerekliUrunSayisi.ToString();
+                                    //_ihtiyacText.text = _gerekliMalzemeSayisi.ToString();
+                                    _timer = 0;
+                                }
+                                else
+                                {
+
+                                }
+
+                            }
+                            else
+                            {
+
+                            }
+                        }
+                        else
+                        {
+
+                        }
+                    }
+
 
                 }
 

@@ -39,17 +39,38 @@ public class ColiseumScript : MonoBehaviour
         _meshRenderer = GetComponent<MeshRenderer>();
         _samanIhtiyacText.text = _gerekliSamanSayisi.ToString();
         _altinIhtiyacText.text = _gerekliAltinSayisi.ToString();
+        _gladyatorIhtiyacText.text = _gerekliGladyatorSayisi.ToString();
 
         _timer = 0;
     }
 
-
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
+        if (GameController.instance.isContinue == true)
+        {
+            if (other.gameObject.tag == "Gladyator")
+            {
+                if (_gerekliGladyatorSayisi > 0)
+                {
+                    _gerekliGladyatorSayisi--;
+                    _gladyatorIhtiyacText.text = _gerekliGladyatorSayisi.ToString();
+                }
+                else
+                {
 
+                }
+
+            }
+            else
+            {
+
+            }
+        }
+        else
+        {
+
+        }
     }
-
-
     private void OnTriggerStay(Collider other)
     {
         if (GameController.instance.isContinue == true)

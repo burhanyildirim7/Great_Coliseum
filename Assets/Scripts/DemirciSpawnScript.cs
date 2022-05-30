@@ -4,7 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
 
-public class KasapSpawnScript : MonoBehaviour
+public class DemirciSpawnScript : MonoBehaviour
 {
     [Header("Urunlerin Spawn Olacagi Nokta")]
     public Transform _urunSpawnNoktasi;
@@ -21,6 +21,8 @@ public class KasapSpawnScript : MonoBehaviour
     [Header("Uretim Icin Gerekli Urun Sayisi")]
     public int _gerekliUrunSayisi;
     public Text _gerekliUrunSayisiText;
+    [Header("Efektler")]
+    public GameObject _efektler;
 
 
     private float _timer;
@@ -30,6 +32,7 @@ public class KasapSpawnScript : MonoBehaviour
     private void Start()
     {
         _gerekliUrunSayisi = 0;
+        _efektler.SetActive(false);
     }
 
     void Update()
@@ -38,7 +41,9 @@ public class KasapSpawnScript : MonoBehaviour
 
         if (_gerekliUrunSayisi > 0)
         {
-            if (_olusanUrunler.Count < 36)
+            _efektler.SetActive(true);
+
+            if (_olusanUrunler.Count < 15)
             {
                 if (_timer > _ambarSpawnHizi)
                 {
@@ -165,7 +170,16 @@ public class KasapSpawnScript : MonoBehaviour
         }
         else
         {
+            _efektler.SetActive(false);
+        }
 
+        if (_ambarUrunSayisi > 0)
+        {
+            SirtCantasiScript._kilicVar = true;
+        }
+        else
+        {
+            SirtCantasiScript._kilicVar = false;
         }
     }
 }

@@ -8,6 +8,8 @@ public class JoystickController : MonoBehaviour
     public FloatingJoystick _floatingJoystick;
     public Rigidbody _rigidbody;
 
+    [SerializeField] private Animator _animator;
+
     public void FixedUpdate()
     {
         if (GameController.instance.isContinue == true)
@@ -20,6 +22,16 @@ public class JoystickController : MonoBehaviour
             {
                 transform.rotation = Quaternion.LookRotation(_rigidbody.velocity);
             }
+
+            if (_rigidbody.velocity.x != 0 || _rigidbody.velocity.z != 0)
+            {
+                _animator.SetBool("run", true);
+            }
+            else
+            {
+                _animator.SetBool("run", false);
+            }
+
             //transform.Rotate(0, _floatingJoystick.Horizontal * 1f, 0);
         }
         else

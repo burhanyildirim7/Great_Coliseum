@@ -41,6 +41,17 @@ public class FarmerScript : MonoBehaviour
         }
     }
 
+    public void Resetle()
+    {
+        _bugdayDemeti.SetActive(true);
+        _farmerAnimator.SetBool("EliBos", false);
+        _farmerAnimator.SetBool("EliDolu", true);
+
+        //_agent.SetDestination(_ambarNoktasi.transform.position);
+
+        _point = _ambarNoktasi.transform;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject == _ambarNoktasi)

@@ -299,7 +299,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3072889451670113644, guid: 39af0152e14ed434c8c5219b237f006c, type: 3}
       propertyPath: _ambarSpawnHizi
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3716279736515901598, guid: 39af0152e14ed434c8c5219b237f006c, type: 3}
       propertyPath: m_LocalPosition.y

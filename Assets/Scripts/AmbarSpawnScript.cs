@@ -13,10 +13,12 @@ public class AmbarSpawnScript : MonoBehaviour
     public List<Transform> _dizilecekTransforms = new List<Transform>();
     [Header("Urunlerin Olusma Hizi")]
     public float _ambarSpawnHizi;
-    [Header("Kontrol Amacli Burayi Elleme")]
-    public List<GameObject> _olusanUrunler = new List<GameObject>();
     [Header("Spawn Olacak Urun Parent")]
     public GameObject _urunParent;
+    [Header("Kontrol Amacli Burayi Elleme")]
+    public List<GameObject> _olusanUrunler = new List<GameObject>();
+    public int _kontrolTarlaSayi;
+
 
     public static int _aktifTarlaSayisi;
 
@@ -33,7 +35,7 @@ public class AmbarSpawnScript : MonoBehaviour
     void Update()
     {
         _timer += Time.deltaTime;
-
+        _kontrolTarlaSayi = _aktifTarlaSayisi;
 
 
         //Debug.Log(_aktifTarlaSayisi);
@@ -162,27 +164,27 @@ public class AmbarSpawnScript : MonoBehaviour
     {
         if (_aktifTarlaSayisi == 1)
         {
-            _ambarSpawnHizi = 5;
+            _ambarSpawnHizi = 2.5f;
         }
         else if (_aktifTarlaSayisi == 2)
         {
-            _ambarSpawnHizi = 4;
+            _ambarSpawnHizi = 2f;
         }
         else if (_aktifTarlaSayisi == 3)
         {
-            _ambarSpawnHizi = 3;
+            _ambarSpawnHizi = 1.5f;
         }
         else if (_aktifTarlaSayisi == 4)
         {
-            _ambarSpawnHizi = 2;
+            _ambarSpawnHizi = 1f;
         }
         else if (_aktifTarlaSayisi == 5)
         {
-            _ambarSpawnHizi = 1;
+            _ambarSpawnHizi = 0.5f;
         }
         else
         {
-
+            _ambarSpawnHizi = 10;
         }
     }
 }

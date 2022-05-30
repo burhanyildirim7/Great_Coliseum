@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.UI;
 
 public class SirtCantasiScript : MonoBehaviour
 {
@@ -16,12 +17,27 @@ public class SirtCantasiScript : MonoBehaviour
     public List<GameObject> _cantadakiAltinObjeleri = new List<GameObject>();
     public List<GameObject> _cantadakiEtObjeleri = new List<GameObject>();
     public List<GameObject> _cantadakiDemirObjeleri = new List<GameObject>();
+    [Header("Textler")]
+    [SerializeField] private Text _samanSayisiText;
+    [SerializeField] private Text _altinSayisiText;
+    [SerializeField] private Text _etSayisiText;
+    [SerializeField] private Text _demirSayisiText;
+
 
     private int _cantadakiObjeSayisi;
+
+    public static bool _kasapVar;
+    public static bool _kilicVar;
 
     void Start()
     {
         _cantadakiObjeSayisi = 0;
+        _samanSayisiText.text = _cantadakiSamanObjeleri.Count.ToString();
+        _altinSayisiText.text = _cantadakiAltinObjeleri.Count.ToString();
+        _etSayisiText.text = _cantadakiEtObjeleri.Count.ToString();
+        _demirSayisiText.text = _cantadakiDemirObjeleri.Count.ToString();
+        _kilicVar = false;
+
     }
 
     private void FixedUpdate()
@@ -40,6 +56,8 @@ public class SirtCantasiScript : MonoBehaviour
                 _cantadakiObjeler.Add(other.gameObject);
                 _cantadakiSamanObjeleri.Add(other.gameObject);
                 other.gameObject.tag = "ToplanmisSamanBalyasi";
+
+                _samanSayisiText.text = _cantadakiSamanObjeleri.Count.ToString();
 
                 int sira = _cantadakiObjeSayisi;
                 other.gameObject.transform.DOLocalMove(new Vector3(_yerlesmeNoktalari[sira].localPosition.x, _yerlesmeNoktalari[sira].localPosition.y + 0.5f, _yerlesmeNoktalari[sira].localPosition.z - 0.5f), 0.5f).OnComplete(() => other.gameObject.transform.DOLocalMove(_yerlesmeNoktalari[sira].localPosition, 0.5f));
@@ -84,6 +102,8 @@ public class SirtCantasiScript : MonoBehaviour
                 _cantadakiAltinObjeleri.Add(other.gameObject);
                 other.gameObject.tag = "ToplanmisAltin";
 
+                _altinSayisiText.text = _cantadakiAltinObjeleri.Count.ToString();
+
                 int sira = _cantadakiObjeSayisi;
                 other.gameObject.transform.DOLocalMove(new Vector3(_yerlesmeNoktalari[sira].localPosition.x, _yerlesmeNoktalari[sira].localPosition.y + 0.5f, _yerlesmeNoktalari[sira].localPosition.z - 0.5f), 0.5f).OnComplete(() => other.gameObject.transform.DOLocalMove(_yerlesmeNoktalari[sira].localPosition, 0.5f));
                 other.gameObject.transform.DOLocalRotate(Vector3.zero, 1);
@@ -124,6 +144,8 @@ public class SirtCantasiScript : MonoBehaviour
                 _cantadakiEtObjeleri.Add(other.gameObject);
                 other.gameObject.tag = "ToplanmisEt";
 
+                _etSayisiText.text = _cantadakiEtObjeleri.Count.ToString();
+
                 int sira = _cantadakiObjeSayisi;
                 other.gameObject.transform.DOLocalMove(new Vector3(_yerlesmeNoktalari[sira].localPosition.x, _yerlesmeNoktalari[sira].localPosition.y + 0.5f, _yerlesmeNoktalari[sira].localPosition.z - 0.5f), 0.5f).OnComplete(() => other.gameObject.transform.DOLocalMove(_yerlesmeNoktalari[sira].localPosition, 0.5f));
                 other.gameObject.transform.DOLocalRotate(Vector3.zero, 1);
@@ -163,6 +185,8 @@ public class SirtCantasiScript : MonoBehaviour
                 _cantadakiObjeler.Add(other.gameObject);
                 _cantadakiDemirObjeleri.Add(other.gameObject);
                 other.gameObject.tag = "ToplanmisDemir";
+
+                _demirSayisiText.text = _cantadakiDemirObjeleri.Count.ToString();
 
                 int sira = _cantadakiObjeSayisi;
                 other.gameObject.transform.DOLocalMove(new Vector3(_yerlesmeNoktalari[sira].localPosition.x, _yerlesmeNoktalari[sira].localPosition.y + 0.5f, _yerlesmeNoktalari[sira].localPosition.z - 0.5f), 0.5f).OnComplete(() => other.gameObject.transform.DOLocalMove(_yerlesmeNoktalari[sira].localPosition, 0.5f));
@@ -207,6 +231,7 @@ public class SirtCantasiScript : MonoBehaviour
             _cantadakiSamanObjeleri[_cantadakiSamanObjeleri.Count - 1].gameObject.transform.DOLocalRotate(Vector3.zero, 0.5f);
             _cantadakiSamanObjeleri.RemoveAt(_cantadakiSamanObjeleri.Count - 1);
             _cantadakiObjeSayisi--;
+            _samanSayisiText.text = _cantadakiSamanObjeleri.Count.ToString();
             //CantayiDüzenle();
 
         }
@@ -226,6 +251,27 @@ public class SirtCantasiScript : MonoBehaviour
             _cantadakiAltinObjeleri[_cantadakiAltinObjeleri.Count - 1].gameObject.transform.DOLocalRotate(Vector3.zero, 0.5f);
             _cantadakiAltinObjeleri.RemoveAt(_cantadakiAltinObjeleri.Count - 1);
             _cantadakiObjeSayisi--;
+            _altinSayisiText.text = _cantadakiAltinObjeleri.Count.ToString();
+            //CantayiDüzenle();
+
+        }
+        else
+        {
+
+        }
+    }
+
+    public void EtCek(Transform malKabulNoktasi)
+    {
+        if (_cantadakiEtObjeleri.Count > 0)
+        {
+            int sira = _cantadakiEtObjeleri.Count - 1;
+            _cantadakiEtObjeleri[_cantadakiEtObjeleri.Count - 1].gameObject.transform.parent = null;
+            _cantadakiEtObjeleri[_cantadakiEtObjeleri.Count - 1].gameObject.transform.DOMove(malKabulNoktasi.position, 0.5f);
+            _cantadakiEtObjeleri[_cantadakiEtObjeleri.Count - 1].gameObject.transform.DOLocalRotate(Vector3.zero, 0.5f);
+            _cantadakiEtObjeleri.RemoveAt(_cantadakiEtObjeleri.Count - 1);
+            _cantadakiObjeSayisi--;
+            _etSayisiText.text = _cantadakiEtObjeleri.Count.ToString();
             //CantayiDüzenle();
 
         }
@@ -245,6 +291,7 @@ public class SirtCantasiScript : MonoBehaviour
             _cantadakiDemirObjeleri[_cantadakiDemirObjeleri.Count - 1].gameObject.transform.DOLocalRotate(Vector3.zero, 0.5f);
             _cantadakiDemirObjeleri.RemoveAt(_cantadakiDemirObjeleri.Count - 1);
             _cantadakiObjeSayisi--;
+            _demirSayisiText.text = _cantadakiDemirObjeleri.Count.ToString();
             //CantayiDüzenle();
 
         }

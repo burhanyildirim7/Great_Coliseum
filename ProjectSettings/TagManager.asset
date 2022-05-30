@@ -27,6 +27,10 @@ TagManager:
   - DemirMadeni
   - Demirci
   - ArastirmaBinasi
+  - Gladyator
+  - GladyatorNokta1
+  - GladyatorNokta2
+  - GladyatorKontrol
   layers:
   - Default
   - TransparentFX
