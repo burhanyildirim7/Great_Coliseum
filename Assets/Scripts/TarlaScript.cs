@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class TarlaScript : MonoBehaviour
 {
@@ -64,7 +65,7 @@ public class TarlaScript : MonoBehaviour
 
         AktiflikSorgula();
 
-
+        _canvasObject.transform.DOScale(new Vector3(_canvasObject.transform.localScale.x * 1.5f, _canvasObject.transform.localScale.y * 1.5f, _canvasObject.transform.localScale.z * 1.5f), 2f).OnComplete(() => _canvasObject.transform.DOScale(new Vector3(_canvasObject.transform.localScale.x / 1.5f, _canvasObject.transform.localScale.y / 1.5f, _canvasObject.transform.localScale.z / 1.5f), 2f));
 
 
         _timer = 0;
@@ -131,6 +132,7 @@ public class TarlaScript : MonoBehaviour
         }
         else if (other.gameObject.tag == "Player")
         {
+
             if (_aclikSlider.value < 0.8f)
             {
                 if (_sirtCantasiScript._cantadakiEtObjeleri.Count > 0)
@@ -147,10 +149,25 @@ public class TarlaScript : MonoBehaviour
             {
 
             }
+
+            _canvasObject.transform.DOScale(new Vector3(_canvasObject.transform.localScale.x * 1.2f, _canvasObject.transform.localScale.y * 1.2f, _canvasObject.transform.localScale.z * 1.2f), 0.5f);
+
         }
         else if (other.gameObject.tag == "ToplanmisEt")
         {
             Destroy(other.gameObject);
+        }
+        else
+        {
+
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            _canvasObject.transform.DOScale(new Vector3(_canvasObject.transform.localScale.x / 1.2f, _canvasObject.transform.localScale.y / 1.2f, _canvasObject.transform.localScale.z / 1.2f), 0.5f);
         }
         else
         {
@@ -211,9 +228,11 @@ public class TarlaScript : MonoBehaviour
                         _aclikSlider.value = 1;
                         _aktifMi = true;
 
+
                         if (_kacinciTarla == 1)
                         {
                             PlayerPrefs.SetInt("BirinciTarlaAktif", 1);
+                            SirtCantasiScript._ilkTarlaAktif = true;
                         }
                         else if (_kacinciTarla == 2)
                         {
@@ -339,6 +358,7 @@ public class TarlaScript : MonoBehaviour
                     _aclikSlider.value = 1;
                     _aktifMi = true;
                     _gerekliMalzemeSayisi = 0;
+                    SirtCantasiScript._ilkTarlaAktif = true;
 
 
                     /*
@@ -415,6 +435,7 @@ public class TarlaScript : MonoBehaviour
                     _aclikSlider.value = 1;
                     _aktifMi = true;
                     _gerekliMalzemeSayisi = 0;
+
 
 
                     /*

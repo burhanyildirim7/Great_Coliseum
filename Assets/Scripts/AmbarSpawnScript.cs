@@ -172,19 +172,19 @@ public class AmbarSpawnScript : MonoBehaviour
     {
         if (_aktifTarlaSayisi == 1)
         {
-            _ambarSpawnHizi = 2.5f;
+            _ambarSpawnHizi = 1.5f;
         }
         else if (_aktifTarlaSayisi == 2)
         {
-            _ambarSpawnHizi = 2f;
+            _ambarSpawnHizi = 1.25f;
         }
         else if (_aktifTarlaSayisi == 3)
         {
-            _ambarSpawnHizi = 1.5f;
+            _ambarSpawnHizi = 1f;
         }
         else if (_aktifTarlaSayisi == 4)
         {
-            _ambarSpawnHizi = 1f;
+            _ambarSpawnHizi = 0.75f;
         }
         else if (_aktifTarlaSayisi == 5)
         {

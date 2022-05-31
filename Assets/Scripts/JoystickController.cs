@@ -12,7 +12,7 @@ public class JoystickController : MonoBehaviour
 
     public void FixedUpdate()
     {
-        if (GameController.instance.isContinue == true)
+        if (GameController.instance.isContinue == true && GameController.instance._kameraHareketli == false)
         {
             Vector3 direction = Vector3.forward * _floatingJoystick.Vertical + Vector3.right * _floatingJoystick.Horizontal;
             // transform.Translate(direction * Time.deltaTime * _speed);

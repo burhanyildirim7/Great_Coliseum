@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class ColiseumScript : MonoBehaviour
 {
@@ -22,6 +23,12 @@ public class ColiseumScript : MonoBehaviour
 
     [Header("Cekilen Malzemenin Gidecegi Transform")]
     public Transform _malKabulNoktasi;
+
+    [Header("Konfeti Paketi")]
+    [SerializeField] private GameObject _konfetiler;
+
+    [Header("Canvas Object")]
+    [SerializeField] private GameObject _canvasObject;
 
     private int _toplananMalzemeSayisi;
     private MeshRenderer _meshRenderer;
@@ -67,6 +74,10 @@ public class ColiseumScript : MonoBehaviour
         _samanIhtiyacText.text = _gerekliSamanSayisi.ToString();
         _altinIhtiyacText.text = _gerekliAltinSayisi.ToString();
         _gladyatorIhtiyacText.text = _gerekliGladyatorSayisi.ToString();
+        _konfetiler.SetActive(false);
+
+        //_canvasObject.transform.DOScale(new Vector3(_canvasObject.transform.localScale.x * 1.5f, _canvasObject.transform.localScale.y * 1.5f, _canvasObject.transform.localScale.z * 1.5f), 2f).OnComplete(() => _canvasObject.transform.DOScale(new Vector3(_canvasObject.transform.localScale.x / 1.5f, _canvasObject.transform.localScale.y / 1.5f, _canvasObject.transform.localScale.z / 1.5f), 2f));
+
 
         _timer = 0;
     }
@@ -89,91 +100,119 @@ public class ColiseumScript : MonoBehaviour
                 }
 
             }
+            else if (other.gameObject.tag == "Player")
+            {
+                _canvasObject.transform.DOScale(new Vector3(_canvasObject.transform.localScale.x * 1.2f, _canvasObject.transform.localScale.y * 1.2f, _canvasObject.transform.localScale.z * 1.2f), 0.5f);
+
+            }
             else
             {
 
             }
+        }
+
+        else
+        {
+
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            _canvasObject.transform.DOScale(new Vector3(_canvasObject.transform.localScale.x / 1.2f, _canvasObject.transform.localScale.y / 1.2f, _canvasObject.transform.localScale.z / 1.2f), 0.5f);
+
         }
         else
         {
 
         }
     }
+
     private void OnTriggerStay(Collider other)
     {
         if (GameController.instance.isContinue == true)
         {
             if (other.gameObject.tag == "Player")
             {
-                if (_playerRigidbody.velocity.x == 0 || _playerRigidbody.velocity.z == 0)
+                if (SirtCantasiScript._ilkTarlaAktif == true)
                 {
-                    if (_gerekliSamanSayisi > 0 || _gerekliAltinSayisi > 0 || _gerekliGladyatorSayisi > 0)
+                    if (_playerRigidbody.velocity.x == 0 || _playerRigidbody.velocity.z == 0)
                     {
-                        _timer += Time.deltaTime;
-
-                        if (_timer > 0.1f)
+                        if (_gerekliSamanSayisi > 0 || _gerekliAltinSayisi > 0 || _gerekliGladyatorSayisi > 0)
                         {
-                            if (_gerekliSamanSayisi > 0)
+                            _timer += Time.deltaTime;
+
+                            if (_timer > 0.1f)
                             {
-                                if (_sirtCantasiScript._cantadakiSamanObjeleri.Count > 0)
+                                if (_gerekliSamanSayisi > 0)
                                 {
-                                    _sirtCantasiScript.SamanCek(_malKabulNoktasi);
-                                    _gerekliSamanSayisi--;
-                                    _samanIhtiyacText.text = _gerekliSamanSayisi.ToString();
-                                    _timer = 0;
-                                    PlayerPrefs.SetInt("KolezyumGerekliSaman", _gerekliSamanSayisi);
+                                    if (_sirtCantasiScript._cantadakiSamanObjeleri.Count > 0)
+                                    {
+                                        _sirtCantasiScript.SamanCek(_malKabulNoktasi);
+                                        _gerekliSamanSayisi--;
+                                        _samanIhtiyacText.text = _gerekliSamanSayisi.ToString();
+                                        _timer = 0;
+                                        PlayerPrefs.SetInt("KolezyumGerekliSaman", _gerekliSamanSayisi);
+                                    }
+                                    else
+                                    {
+
+                                    }
                                 }
                                 else
                                 {
 
                                 }
-                            }
-                            else
-                            {
 
-                            }
-
-                            if (_gerekliAltinSayisi > 0)
-                            {
-                                if (_sirtCantasiScript._cantadakiAltinObjeleri.Count > 0)
+                                if (_gerekliAltinSayisi > 0)
                                 {
-                                    _sirtCantasiScript.AltinCek(_malKabulNoktasi);
-                                    _gerekliAltinSayisi--;
-                                    _altinIhtiyacText.text = _gerekliAltinSayisi.ToString();
-                                    _timer = 0;
-                                    PlayerPrefs.SetInt("KolezyumGerekliAltin", _gerekliAltinSayisi);
+                                    if (_sirtCantasiScript._cantadakiAltinObjeleri.Count > 0)
+                                    {
+                                        _sirtCantasiScript.AltinCek(_malKabulNoktasi);
+                                        _gerekliAltinSayisi--;
+                                        _altinIhtiyacText.text = _gerekliAltinSayisi.ToString();
+                                        _timer = 0;
+                                        PlayerPrefs.SetInt("KolezyumGerekliAltin", _gerekliAltinSayisi);
+                                    }
+                                    else
+                                    {
+
+                                    }
                                 }
                                 else
                                 {
 
                                 }
+
+
                             }
                             else
                             {
 
                             }
-
 
                         }
                         else
                         {
-
+                            GameController.instance.isContinue = false;
+                            _konfetiler.SetActive(true);
+                            StartCoroutine(OyunSonuTitresim());
+                            Invoke("WinAktif", 2f);
                         }
 
                     }
                     else
                     {
-                        GameController.instance.isContinue = false;
-                        GameController.instance.SetScore(100);
-                        GameController.instance.ScoreCarp(1);
-                        UIController.instance.ActivateWinScreen();
-                    }
 
+                    }
                 }
                 else
                 {
 
                 }
+
 
             }
             else
@@ -186,5 +225,57 @@ public class ColiseumScript : MonoBehaviour
 
         }
 
+    }
+
+    private void WinAktif()
+    {
+        GameController.instance.SetScore(100);
+        GameController.instance.ScoreCarp(1);
+        UIController.instance.ActivateWinScreen();
+    }
+
+    private IEnumerator OyunSonuTitresim()
+    {
+        MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
+        yield return new WaitForSeconds(0.1f);
+        MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
+        yield return new WaitForSeconds(0.1f);
+        MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
+        yield return new WaitForSeconds(0.1f);
+        MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
+        yield return new WaitForSeconds(0.1f);
+        MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
+        yield return new WaitForSeconds(0.1f);
+        MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
+        yield return new WaitForSeconds(0.1f);
+        MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
+        yield return new WaitForSeconds(0.1f);
+        MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
+        yield return new WaitForSeconds(0.1f);
+        MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
+        yield return new WaitForSeconds(0.1f);
+        MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
+        yield return new WaitForSeconds(0.1f);
+        MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
+        yield return new WaitForSeconds(0.1f);
+        MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
+        yield return new WaitForSeconds(0.1f);
+        MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
+        yield return new WaitForSeconds(0.1f);
+        MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
+        yield return new WaitForSeconds(0.1f);
+        MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
+        yield return new WaitForSeconds(0.1f);
+        MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
+        yield return new WaitForSeconds(0.1f);
+        MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
+        yield return new WaitForSeconds(0.1f);
+        MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
+        yield return new WaitForSeconds(0.1f);
+        MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
+        yield return new WaitForSeconds(0.1f);
+        MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
+        yield return new WaitForSeconds(0.1f);
+        MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
     }
 }

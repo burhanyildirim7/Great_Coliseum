@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class DemirciKontrolNoktasiScript : MonoBehaviour
 {
@@ -80,6 +81,9 @@ public class DemirciKontrolNoktasiScript : MonoBehaviour
             _ihtiyacSamanText.text = _gerekliSamanSayisi.ToString();
             _ihtiyacDemirText.text = _gerekliDemirSayisi.ToString();
 
+            _kapanacakCanvas.transform.DOScale(new Vector3(_kapanacakCanvas.transform.localScale.x * 1.5f, _kapanacakCanvas.transform.localScale.y * 1.5f, _kapanacakCanvas.transform.localScale.z * 1.5f), 2f).OnComplete(() => _kapanacakCanvas.transform.DOScale(new Vector3(_kapanacakCanvas.transform.localScale.x / 1.5f, _kapanacakCanvas.transform.localScale.y / 1.5f, _kapanacakCanvas.transform.localScale.z / 1.5f), 2f));
+
+
             _calisiyor = false;
             _timer = 0;
         }
@@ -103,6 +107,24 @@ public class DemirciKontrolNoktasiScript : MonoBehaviour
         {
             Destroy(other.gameObject);
         }
+        else if (other.gameObject.tag == "Player")
+        {
+            _acilacakCanvas.transform.DOScale(new Vector3(_acilacakCanvas.transform.localScale.x * 1.2f, _acilacakCanvas.transform.localScale.y * 1.2f, _acilacakCanvas.transform.localScale.z * 1.2f), 0.5f);
+            _kapanacakCanvas.transform.DOScale(new Vector3(_kapanacakCanvas.transform.localScale.x * 1.2f, _kapanacakCanvas.transform.localScale.y * 1.2f, _kapanacakCanvas.transform.localScale.z * 1.2f), 0.5f);
+        }
+        else
+        {
+
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            _acilacakCanvas.transform.DOScale(new Vector3(_acilacakCanvas.transform.localScale.x / 1.2f, _acilacakCanvas.transform.localScale.y / 1.2f, _acilacakCanvas.transform.localScale.z / 1.2f), 0.5f);
+            _kapanacakCanvas.transform.DOScale(new Vector3(_kapanacakCanvas.transform.localScale.x / 1.2f, _kapanacakCanvas.transform.localScale.y / 1.2f, _kapanacakCanvas.transform.localScale.z / 1.2f), 0.5f);
+        }
         else
         {
 
@@ -113,118 +135,126 @@ public class DemirciKontrolNoktasiScript : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            if (_playerRigidbody.velocity.x == 0 || _playerRigidbody.velocity.z == 0)
+            if (SirtCantasiScript._ilkTarlaAktif == true)
             {
-                if (_gerekliSamanSayisi > 0 || _gerekliDemirSayisi > 0)
+                if (_playerRigidbody.velocity.x == 0 || _playerRigidbody.velocity.z == 0)
                 {
-                    _timer += Time.deltaTime;
-
-                    if (_timer > 0.1f)
+                    if (_gerekliSamanSayisi > 0 || _gerekliDemirSayisi > 0)
                     {
-                        if (_gerekliSamanSayisi > 0)
+                        _timer += Time.deltaTime;
+
+                        if (_timer > 0.1f)
                         {
-                            if (_sirtCantasiScript._cantadakiSamanObjeleri.Count > 0)
+                            if (_gerekliSamanSayisi > 0)
                             {
-                                _sirtCantasiScript.SamanCek(_malKabulNoktasi);
-                                _gerekliSamanSayisi--;
-                                _ihtiyacSamanText.text = _gerekliSamanSayisi.ToString();
-                                _timer = 0;
-                            }
-                            else
-                            {
-
-                            }
-                        }
-                        else
-                        {
-
-                        }
-
-                        if (_gerekliDemirSayisi > 0)
-                        {
-                            if (_sirtCantasiScript._cantadakiDemirObjeleri.Count > 0)
-                            {
-                                _sirtCantasiScript.DemirCek(_malKabulNoktasi);
-                                _gerekliDemirSayisi--;
-                                _ihtiyacDemirText.text = _gerekliDemirSayisi.ToString();
-                                _timer = 0;
-                            }
-                            else
-                            {
-
-                            }
-                        }
-                        else
-                        {
-
-                        }
-
-
-                    }
-                    else
-                    {
-
-                    }
-
-                }
-                else
-                {
-                    if (_calisiyor == false)
-                    {
-                        _kapanacakCanvas.SetActive(false);
-                        _acilacakCanvas.SetActive(true);
-                        _demirMadeniObject.SetActive(true);
-                        _mekanikObjesi.SetActive(true);
-                        _malKabulObjesi.SetActive(true);
-                        _malKabulObjesi.GetComponent<MeshRenderer>().enabled = true;
-                        _meshRenderer.enabled = false;
-                        _ihtiyacSamanText.gameObject.SetActive(false);
-                        _ihtiyacDemirText.gameObject.SetActive(false);
-                        _gerekliUrunSayisiText.text = _kasapSpawnScript._gerekliUrunSayisi.ToString();
-                        _calisiyor = true;
-                        PlayerPrefs.SetInt("DemirciAktif", 1);
-
-                    }
-                    else
-                    {
-                        if (_kasapSpawnScript._gerekliUrunSayisi < 10)
-                        {
-                            _timer += Time.deltaTime;
-
-                            if (_timer > 0.1f)
-                            {
-                                if (_sirtCantasiScript._cantadakiDemirObjeleri.Count > 0)
+                                if (_sirtCantasiScript._cantadakiSamanObjeleri.Count > 0)
                                 {
-                                    _sirtCantasiScript.DemirCek(_malKabulNoktasi);
-                                    _kasapSpawnScript._gerekliUrunSayisi++;
-                                    _gerekliUrunSayisiText.text = _kasapSpawnScript._gerekliUrunSayisi.ToString();
-                                    //_ihtiyacText.text = _gerekliMalzemeSayisi.ToString();
+                                    _sirtCantasiScript.SamanCek(_malKabulNoktasi);
+                                    _gerekliSamanSayisi--;
+                                    _ihtiyacSamanText.text = _gerekliSamanSayisi.ToString();
                                     _timer = 0;
                                 }
                                 else
                                 {
 
                                 }
+                            }
+                            else
+                            {
 
+                            }
+
+                            if (_gerekliDemirSayisi > 0)
+                            {
+                                if (_sirtCantasiScript._cantadakiDemirObjeleri.Count > 0)
+                                {
+                                    _sirtCantasiScript.DemirCek(_malKabulNoktasi);
+                                    _gerekliDemirSayisi--;
+                                    _ihtiyacDemirText.text = _gerekliDemirSayisi.ToString();
+                                    _timer = 0;
+                                }
+                                else
+                                {
+
+                                }
+                            }
+                            else
+                            {
+
+                            }
+
+
+                        }
+                        else
+                        {
+
+                        }
+
+                    }
+                    else
+                    {
+                        if (_calisiyor == false)
+                        {
+                            _kapanacakCanvas.SetActive(false);
+                            _acilacakCanvas.SetActive(true);
+                            _demirMadeniObject.SetActive(true);
+                            _mekanikObjesi.SetActive(true);
+                            _malKabulObjesi.SetActive(true);
+                            _malKabulObjesi.GetComponent<MeshRenderer>().enabled = true;
+                            _meshRenderer.enabled = false;
+                            _ihtiyacSamanText.gameObject.SetActive(false);
+                            _ihtiyacDemirText.gameObject.SetActive(false);
+                            _gerekliUrunSayisiText.text = _kasapSpawnScript._gerekliUrunSayisi.ToString();
+                            _calisiyor = true;
+                            PlayerPrefs.SetInt("DemirciAktif", 1);
+
+                        }
+                        else
+                        {
+                            if (_kasapSpawnScript._gerekliUrunSayisi < 10)
+                            {
+                                _timer += Time.deltaTime;
+
+                                if (_timer > 0.1f)
+                                {
+                                    if (_sirtCantasiScript._cantadakiDemirObjeleri.Count > 0)
+                                    {
+                                        _sirtCantasiScript.DemirCek(_malKabulNoktasi);
+                                        _kasapSpawnScript._gerekliUrunSayisi++;
+                                        _gerekliUrunSayisiText.text = _kasapSpawnScript._gerekliUrunSayisi.ToString();
+                                        //_ihtiyacText.text = _gerekliMalzemeSayisi.ToString();
+                                        _timer = 0;
+                                    }
+                                    else
+                                    {
+
+                                    }
+
+                                }
+                                else
+                                {
+
+                                }
                             }
                             else
                             {
 
                             }
                         }
-                        else
-                        {
 
-                        }
                     }
 
                 }
+                else
+                {
 
+                }
             }
             else
             {
 
             }
+
 
         }
         else

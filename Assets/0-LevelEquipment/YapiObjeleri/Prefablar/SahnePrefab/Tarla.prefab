@@ -430,8 +430,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b17933004666c4df3bc34575191d5819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _kacinciTarla: 0
   _ilkTarlaMi: 1
   _ambarObject: {fileID: 0}
+  _samanBalyalari: {fileID: 0}
   _ihtiyacText: {fileID: 6791711241820568193}
   _gerekliMalzemeSayisi: 10
   _tarlaObject: {fileID: 3803406413502617466}

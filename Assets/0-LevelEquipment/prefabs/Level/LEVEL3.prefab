@@ -581,6 +581,10 @@ PrefabInstance:
       propertyPath: _samanBalyalari
       value: 
       objectReference: {fileID: 4202299735530995649}
+    - target: {fileID: 777857741322282165, guid: 8f26668fe9ba7495cbc5929e3950521a, type: 3}
+      propertyPath: _gerekliMalzemeSayisi
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 777857742075550594, guid: 8f26668fe9ba7495cbc5929e3950521a, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -641,6 +645,10 @@ PrefabInstance:
       propertyPath: _samanBalyalari
       value: 
       objectReference: {fileID: 4202299735530995649}
+    - target: {fileID: 4102147239433682479, guid: 8f26668fe9ba7495cbc5929e3950521a, type: 3}
+      propertyPath: _gerekliMalzemeSayisi
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 4102147239658002601, guid: 8f26668fe9ba7495cbc5929e3950521a, type: 3}
       propertyPath: _kacinciTarla
       value: 4
@@ -657,6 +665,10 @@ PrefabInstance:
       propertyPath: _samanBalyalari
       value: 
       objectReference: {fileID: 4202299735530995649}
+    - target: {fileID: 4102147239891449450, guid: 8f26668fe9ba7495cbc5929e3950521a, type: 3}
+      propertyPath: _gerekliMalzemeSayisi
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 4102147240153645336, guid: 8f26668fe9ba7495cbc5929e3950521a, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -677,6 +689,10 @@ PrefabInstance:
       propertyPath: _samanBalyalari
       value: 
       objectReference: {fileID: 4202299735530995649}
+    - target: {fileID: 4468670916469808671, guid: 8f26668fe9ba7495cbc5929e3950521a, type: 3}
+      propertyPath: _gerekliMalzemeSayisi
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4878436560572163597, guid: 8f26668fe9ba7495cbc5929e3950521a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3

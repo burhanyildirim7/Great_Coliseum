@@ -28,6 +28,7 @@ public class SirtCantasiScript : MonoBehaviour
 
     public static bool _kasapVar;
     public static bool _kilicVar;
+    public static bool _ilkTarlaAktif;
 
     void Start()
     {
@@ -37,6 +38,7 @@ public class SirtCantasiScript : MonoBehaviour
         _etSayisiText.text = _cantadakiEtObjeleri.Count.ToString();
         _demirSayisiText.text = _cantadakiDemirObjeleri.Count.ToString();
         _kilicVar = false;
+        _ilkTarlaAktif = false;
 
     }
 
@@ -365,5 +367,7 @@ public class SirtCantasiScript : MonoBehaviour
         }
 
         _cantadakiObjeSayisi = 0;
+
+        _ilkTarlaAktif = false;
     }
 }
