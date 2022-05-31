@@ -4043,7 +4043,7 @@ MonoBehaviour:
   - {fileID: 8576221545893881061}
   - {fileID: 5649167945058350413}
   - {fileID: 7723668928624684288}
-  _ambarSpawnHizi: 5
+  _ambarSpawnHizi: 2.5
   _olusanUrunler: []
   _urunParent: {fileID: 8440536807450309157}
   _gerekliUrunSayisi: 0

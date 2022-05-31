@@ -33,6 +33,33 @@ public class ColiseumScript : MonoBehaviour
 
     void Start()
     {
+        if (PlayerPrefs.GetInt("KolezyumGerekliSaman") > 0)
+        {
+            _gerekliSamanSayisi = PlayerPrefs.GetInt("KolezyumGerekliSaman");
+        }
+        else
+        {
+            PlayerPrefs.SetInt("KolezyumGerekliSaman", _gerekliSamanSayisi);
+        }
+
+        if (PlayerPrefs.GetInt("KolezyumGerekliAltin") > 0)
+        {
+            _gerekliAltinSayisi = PlayerPrefs.GetInt("KolezyumGerekliAltin");
+        }
+        else
+        {
+            PlayerPrefs.SetInt("KolezyumGerekliAltin", _gerekliAltinSayisi);
+        }
+
+        if (PlayerPrefs.GetInt("KolezyumGerekliGladyator") > 0)
+        {
+            _gerekliGladyatorSayisi = PlayerPrefs.GetInt("KolezyumGerekliGladyator");
+        }
+        else
+        {
+            PlayerPrefs.SetInt("KolezyumGerekliGladyator", _gerekliGladyatorSayisi);
+        }
+
 
         _sirtCantasiScript = GameObject.FindGameObjectWithTag("Player").GetComponent<SirtCantasiScript>();
         _playerRigidbody = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>();
@@ -54,6 +81,7 @@ public class ColiseumScript : MonoBehaviour
                 {
                     _gerekliGladyatorSayisi--;
                     _gladyatorIhtiyacText.text = _gerekliGladyatorSayisi.ToString();
+                    PlayerPrefs.SetInt("KolezyumGerekliGladyator", _gerekliGladyatorSayisi);
                 }
                 else
                 {
@@ -93,6 +121,7 @@ public class ColiseumScript : MonoBehaviour
                                     _gerekliSamanSayisi--;
                                     _samanIhtiyacText.text = _gerekliSamanSayisi.ToString();
                                     _timer = 0;
+                                    PlayerPrefs.SetInt("KolezyumGerekliSaman", _gerekliSamanSayisi);
                                 }
                                 else
                                 {
@@ -112,6 +141,7 @@ public class ColiseumScript : MonoBehaviour
                                     _gerekliAltinSayisi--;
                                     _altinIhtiyacText.text = _gerekliAltinSayisi.ToString();
                                     _timer = 0;
+                                    PlayerPrefs.SetInt("KolezyumGerekliAltin", _gerekliAltinSayisi);
                                 }
                                 else
                                 {

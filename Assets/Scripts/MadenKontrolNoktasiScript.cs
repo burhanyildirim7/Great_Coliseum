@@ -39,22 +39,43 @@ public class MadenKontrolNoktasiScript : MonoBehaviour
     void Start()
     {
 
-        _madenObject.SetActive(false);
-        _mekanikObjesi.SetActive(false);
-        _malKabulObjesi.GetComponent<MeshRenderer>().enabled = false;
-        _kapanacakCanvas.SetActive(true);
-        _acilacakCanvas.SetActive(false);
-        _calisiyor = false;
+        if (PlayerPrefs.GetInt("AltinMadeniAktif") == 1)
+        {
+            _sirtCantasiScript = GameObject.FindGameObjectWithTag("Player").GetComponent<SirtCantasiScript>();
+            _playerRigidbody = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>();
+            _meshRenderer = GetComponent<MeshRenderer>();
 
-        _sirtCantasiScript = GameObject.FindGameObjectWithTag("Player").GetComponent<SirtCantasiScript>();
-        _playerRigidbody = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>();
-        _meshRenderer = GetComponent<MeshRenderer>();
-        _ihtiyacText.text = _gerekliMalzemeSayisi.ToString();
+            _kapanacakCanvas.SetActive(false);
+            _acilacakCanvas.SetActive(true);
+            _madenObject.SetActive(true);
+            _mekanikObjesi.SetActive(true);
+            _malKabulObjesi.GetComponent<MeshRenderer>().enabled = true;
+            _meshRenderer.enabled = false;
+            _ihtiyacText.gameObject.SetActive(false);
+            _gerekliUrunSayisiText.text = _altinMadeniSpawnScript._gerekliUrunSayisi.ToString();
+            _calisiyor = true;
 
+            _gerekliMalzemeSayisi = 0;
 
+            _timer = 0;
+        }
+        else
+        {
+            _madenObject.SetActive(false);
+            _mekanikObjesi.SetActive(false);
+            _malKabulObjesi.GetComponent<MeshRenderer>().enabled = false;
+            _kapanacakCanvas.SetActive(true);
+            _acilacakCanvas.SetActive(false);
+            _calisiyor = false;
 
+            _sirtCantasiScript = GameObject.FindGameObjectWithTag("Player").GetComponent<SirtCantasiScript>();
+            _playerRigidbody = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>();
+            _meshRenderer = GetComponent<MeshRenderer>();
+            _ihtiyacText.text = _gerekliMalzemeSayisi.ToString();
 
-        _timer = 0;
+            _timer = 0;
+        }
+
     }
 
 
@@ -115,6 +136,7 @@ public class MadenKontrolNoktasiScript : MonoBehaviour
                         _ihtiyacText.gameObject.SetActive(false);
                         _gerekliUrunSayisiText.text = _altinMadeniSpawnScript._gerekliUrunSayisi.ToString();
                         _calisiyor = true;
+                        PlayerPrefs.SetInt("AltinMadeniAktif", 1);
                     }
                     else
                     {

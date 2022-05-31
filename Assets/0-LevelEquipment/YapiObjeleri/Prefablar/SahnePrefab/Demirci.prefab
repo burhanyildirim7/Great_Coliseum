@@ -673,7 +673,7 @@ MonoBehaviour:
   - {fileID: 3158184035745046097}
   - {fileID: 3158184035352860917}
   - {fileID: 3158184034454967490}
-  _ambarSpawnHizi: 5
+  _ambarSpawnHizi: 2.5
   _olusanUrunler: []
   _urunParent: {fileID: 4185246269800270713}
   _gerekliUrunSayisi: 0

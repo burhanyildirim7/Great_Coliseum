@@ -64,6 +64,8 @@ public class SirtCantasiScript : MonoBehaviour
                 other.gameObject.transform.DOLocalRotate(Vector3.zero, 1);
                 _cantadakiObjeSayisi++;
 
+                MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
+
                 if (GameObject.FindGameObjectWithTag("Ambar") != null)
                 {
                     AmbarSpawnScript _ambarSpawnScript = GameObject.FindGameObjectWithTag("Ambar").GetComponent<AmbarSpawnScript>();
@@ -109,6 +111,8 @@ public class SirtCantasiScript : MonoBehaviour
                 other.gameObject.transform.DOLocalRotate(Vector3.zero, 1);
                 _cantadakiObjeSayisi++;
 
+                MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
+
                 if (GameObject.FindGameObjectWithTag("AltinMadeni") != null)
                 {
                     AltinMadeniSpawnScript _altinMadeniSpawnScript = GameObject.FindGameObjectWithTag("AltinMadeni").GetComponent<AltinMadeniSpawnScript>();
@@ -150,6 +154,8 @@ public class SirtCantasiScript : MonoBehaviour
                 other.gameObject.transform.DOLocalMove(new Vector3(_yerlesmeNoktalari[sira].localPosition.x, _yerlesmeNoktalari[sira].localPosition.y + 0.5f, _yerlesmeNoktalari[sira].localPosition.z - 0.5f), 0.5f).OnComplete(() => other.gameObject.transform.DOLocalMove(_yerlesmeNoktalari[sira].localPosition, 0.5f));
                 other.gameObject.transform.DOLocalRotate(Vector3.zero, 1);
                 _cantadakiObjeSayisi++;
+
+                MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
 
                 if (GameObject.FindGameObjectWithTag("Kasap") != null)
                 {
@@ -193,6 +199,8 @@ public class SirtCantasiScript : MonoBehaviour
                 other.gameObject.transform.DOLocalRotate(Vector3.zero, 1);
                 _cantadakiObjeSayisi++;
 
+                MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
+
                 if (GameObject.FindGameObjectWithTag("DemirMadeni") != null)
                 {
                     DemirMadeniSpawnScript _demirMadeniSpawnScript = GameObject.FindGameObjectWithTag("DemirMadeni").GetComponent<DemirMadeniSpawnScript>();
@@ -232,6 +240,8 @@ public class SirtCantasiScript : MonoBehaviour
             _cantadakiSamanObjeleri.RemoveAt(_cantadakiSamanObjeleri.Count - 1);
             _cantadakiObjeSayisi--;
             _samanSayisiText.text = _cantadakiSamanObjeleri.Count.ToString();
+
+            MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
             //CantayiDüzenle();
 
         }
@@ -252,6 +262,8 @@ public class SirtCantasiScript : MonoBehaviour
             _cantadakiAltinObjeleri.RemoveAt(_cantadakiAltinObjeleri.Count - 1);
             _cantadakiObjeSayisi--;
             _altinSayisiText.text = _cantadakiAltinObjeleri.Count.ToString();
+
+            MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
             //CantayiDüzenle();
 
         }
@@ -272,6 +284,8 @@ public class SirtCantasiScript : MonoBehaviour
             _cantadakiEtObjeleri.RemoveAt(_cantadakiEtObjeleri.Count - 1);
             _cantadakiObjeSayisi--;
             _etSayisiText.text = _cantadakiEtObjeleri.Count.ToString();
+
+            MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
             //CantayiDüzenle();
 
         }
@@ -292,6 +306,8 @@ public class SirtCantasiScript : MonoBehaviour
             _cantadakiDemirObjeleri.RemoveAt(_cantadakiDemirObjeleri.Count - 1);
             _cantadakiObjeSayisi--;
             _demirSayisiText.text = _cantadakiDemirObjeleri.Count.ToString();
+
+            MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
             //CantayiDüzenle();
 
         }

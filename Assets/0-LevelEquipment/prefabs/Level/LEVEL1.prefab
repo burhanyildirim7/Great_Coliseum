@@ -78,6 +78,14 @@ PrefabInstance:
       propertyPath: _ambarObject
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 777857741322282165, guid: 8f26668fe9ba7495cbc5929e3950521a, type: 3}
+      propertyPath: _kacinciTarla
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 777857741322282165, guid: 8f26668fe9ba7495cbc5929e3950521a, type: 3}
+      propertyPath: _samanBalyalari
+      value: 
+      objectReference: {fileID: 4083755939276018459}
     - target: {fileID: 777857741409180141, guid: 8f26668fe9ba7495cbc5929e3950521a, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -138,10 +146,26 @@ PrefabInstance:
       propertyPath: _ambarObject
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4102147239433682479, guid: 8f26668fe9ba7495cbc5929e3950521a, type: 3}
+      propertyPath: _kacinciTarla
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102147239433682479, guid: 8f26668fe9ba7495cbc5929e3950521a, type: 3}
+      propertyPath: _samanBalyalari
+      value: 
+      objectReference: {fileID: 4083755939276018459}
     - target: {fileID: 4102147239658002601, guid: 8f26668fe9ba7495cbc5929e3950521a, type: 3}
       propertyPath: _ambarObject
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4102147239658002601, guid: 8f26668fe9ba7495cbc5929e3950521a, type: 3}
+      propertyPath: _kacinciTarla
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102147239658002601, guid: 8f26668fe9ba7495cbc5929e3950521a, type: 3}
+      propertyPath: _samanBalyalari
+      value: 
+      objectReference: {fileID: 4083755939276018459}
     - target: {fileID: 4102147239891449450, guid: 8f26668fe9ba7495cbc5929e3950521a, type: 3}
       propertyPath: _ilkTarlaMi
       value: 0
@@ -150,6 +174,14 @@ PrefabInstance:
       propertyPath: _ambarObject
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4102147239891449450, guid: 8f26668fe9ba7495cbc5929e3950521a, type: 3}
+      propertyPath: _kacinciTarla
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102147239891449450, guid: 8f26668fe9ba7495cbc5929e3950521a, type: 3}
+      propertyPath: _samanBalyalari
+      value: 
+      objectReference: {fileID: 4083755939276018459}
     - target: {fileID: 4102147240153645336, guid: 8f26668fe9ba7495cbc5929e3950521a, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -166,6 +198,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4468670916469808671, guid: 8f26668fe9ba7495cbc5929e3950521a, type: 3}
+      propertyPath: _kacinciTarla
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468670916469808671, guid: 8f26668fe9ba7495cbc5929e3950521a, type: 3}
+      propertyPath: _samanBalyalari
+      value: 
+      objectReference: {fileID: 4083755939276018459}
     - target: {fileID: 4468670916657374023, guid: 8f26668fe9ba7495cbc5929e3950521a, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -443,6 +483,11 @@ PrefabInstance:
 --- !u!4 &4083755939276018458 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6436208446708854241, guid: ee57c52a582674a1aa040dda9ff3249b, type: 3}
+  m_PrefabInstance: {fileID: 7061199018927554299}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4083755939276018459 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6436208446708854240, guid: ee57c52a582674a1aa040dda9ff3249b, type: 3}
   m_PrefabInstance: {fileID: 7061199018927554299}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7522554034527444353

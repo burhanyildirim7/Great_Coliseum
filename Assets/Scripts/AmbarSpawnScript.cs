@@ -34,32 +34,87 @@ public class AmbarSpawnScript : MonoBehaviour
 
     void Update()
     {
-        _timer += Time.deltaTime;
-        _kontrolTarlaSayi = _aktifTarlaSayisi;
-
-
-        //Debug.Log(_aktifTarlaSayisi);
-
-        if (_olusanUrunler.Count < 45)
+        if (GameController.instance.isContinue == true)
         {
-            if (_timer > _ambarSpawnHizi)
+            _timer += Time.deltaTime;
+            _kontrolTarlaSayi = _aktifTarlaSayisi;
+
+
+            //Debug.Log(_aktifTarlaSayisi);
+
+            if (_olusanUrunler.Count < 45)
             {
-
-                AmbarHiziGüncelle();
-
-                if (_olusanUrunler.Count == _ambarUrunSayisi)
+                if (_timer > _ambarSpawnHizi)
                 {
-                    GameObject urun = Instantiate(_urunPrefab, _urunSpawnNoktasi.position, Quaternion.identity);
-                    urun.gameObject.transform.DOMove(_dizilecekTransforms[_olusanUrunler.Count].position, 0.5f);
-                    urun.gameObject.transform.DOLocalRotate(Vector3.zero, 0.5f);
-                    _olusanUrunler.Add(urun);
-                    urun.transform.parent = _urunParent.transform;
-                    _ambarUrunSayisi++;
 
-                    _timer = 0;
+                    AmbarHiziGüncelle();
+
+                    if (_olusanUrunler.Count == _ambarUrunSayisi)
+                    {
+                        GameObject urun = Instantiate(_urunPrefab, _urunSpawnNoktasi.position, Quaternion.identity);
+                        urun.gameObject.transform.DOMove(_dizilecekTransforms[_olusanUrunler.Count].position, 0.5f);
+                        urun.gameObject.transform.DOLocalRotate(Vector3.zero, 0.5f);
+                        _olusanUrunler.Add(urun);
+                        urun.transform.parent = _urunParent.transform;
+                        _ambarUrunSayisi++;
+
+                        _timer = 0;
+                    }
+                    else
+                    {
+
+                        for (int i = 0; i < _olusanUrunler.Count; i++)
+                        {
+
+
+                            if (_olusanUrunler[i] == null)
+                            {
+                                GameObject urun = Instantiate(_urunPrefab, _urunSpawnNoktasi.position, Quaternion.identity);
+                                _olusanUrunler[i] = urun;
+                                _bosSpawnNoktasi = i;
+
+                                urun.gameObject.transform.DOMove(_dizilecekTransforms[_bosSpawnNoktasi].position, 0.5f);
+                                urun.gameObject.transform.DOLocalRotate(Vector3.zero, 0.5f);
+                                urun.transform.parent = _urunParent.transform;
+
+                                _ambarUrunSayisi++;
+
+                                break;
+                            }
+                            else if (_olusanUrunler[i].transform.parent != _urunParent.transform)
+                            {
+                                GameObject urun = Instantiate(_urunPrefab, _urunSpawnNoktasi.position, Quaternion.identity);
+                                _olusanUrunler[i] = urun;
+                                _bosSpawnNoktasi = i;
+
+                                urun.gameObject.transform.DOMove(_dizilecekTransforms[_bosSpawnNoktasi].position, 0.5f);
+                                urun.gameObject.transform.DOLocalRotate(Vector3.zero, 0.5f);
+                                urun.transform.parent = _urunParent.transform;
+
+                                _ambarUrunSayisi++;
+
+                                break;
+
+                            }
+                            else
+                            {
+
+
+                            }
+
+                        }
+
+                        _timer = 0;
+
+                    }
                 }
-                else
+            }
+            else
+            {
+                if (_timer > _ambarSpawnHizi)
                 {
+
+                    AmbarHiziGüncelle();
 
                     for (int i = 0; i < _olusanUrunler.Count; i++)
                     {
@@ -103,61 +158,14 @@ public class AmbarSpawnScript : MonoBehaviour
                     }
 
                     _timer = 0;
-
                 }
             }
         }
         else
         {
-            if (_timer > _ambarSpawnHizi)
-            {
 
-                AmbarHiziGüncelle();
-
-                for (int i = 0; i < _olusanUrunler.Count; i++)
-                {
-
-
-                    if (_olusanUrunler[i] == null)
-                    {
-                        GameObject urun = Instantiate(_urunPrefab, _urunSpawnNoktasi.position, Quaternion.identity);
-                        _olusanUrunler[i] = urun;
-                        _bosSpawnNoktasi = i;
-
-                        urun.gameObject.transform.DOMove(_dizilecekTransforms[_bosSpawnNoktasi].position, 0.5f);
-                        urun.gameObject.transform.DOLocalRotate(Vector3.zero, 0.5f);
-                        urun.transform.parent = _urunParent.transform;
-
-                        _ambarUrunSayisi++;
-
-                        break;
-                    }
-                    else if (_olusanUrunler[i].transform.parent != _urunParent.transform)
-                    {
-                        GameObject urun = Instantiate(_urunPrefab, _urunSpawnNoktasi.position, Quaternion.identity);
-                        _olusanUrunler[i] = urun;
-                        _bosSpawnNoktasi = i;
-
-                        urun.gameObject.transform.DOMove(_dizilecekTransforms[_bosSpawnNoktasi].position, 0.5f);
-                        urun.gameObject.transform.DOLocalRotate(Vector3.zero, 0.5f);
-                        urun.transform.parent = _urunParent.transform;
-
-                        _ambarUrunSayisi++;
-
-                        break;
-
-                    }
-                    else
-                    {
-
-
-                    }
-
-                }
-
-                _timer = 0;
-            }
         }
+
     }
 
     private void AmbarHiziGüncelle()

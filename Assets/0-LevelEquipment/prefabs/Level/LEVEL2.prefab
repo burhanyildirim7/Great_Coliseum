@@ -76,6 +76,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2781568292806649867}
     m_Modifications:
+    - target: {fileID: 777857741322282165, guid: 8f26668fe9ba7495cbc5929e3950521a, type: 3}
+      propertyPath: _kacinciTarla
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 777857741322282165, guid: 8f26668fe9ba7495cbc5929e3950521a, type: 3}
+      propertyPath: _samanBalyalari
+      value: 
+      objectReference: {fileID: 9207641206754021851}
     - target: {fileID: 777857742075550594, guid: 8f26668fe9ba7495cbc5929e3950521a, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -128,6 +136,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4102147239433682479, guid: 8f26668fe9ba7495cbc5929e3950521a, type: 3}
+      propertyPath: _kacinciTarla
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102147239433682479, guid: 8f26668fe9ba7495cbc5929e3950521a, type: 3}
+      propertyPath: _samanBalyalari
+      value: 
+      objectReference: {fileID: 9207641206754021851}
+    - target: {fileID: 4102147239658002601, guid: 8f26668fe9ba7495cbc5929e3950521a, type: 3}
+      propertyPath: _kacinciTarla
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102147239658002601, guid: 8f26668fe9ba7495cbc5929e3950521a, type: 3}
+      propertyPath: _samanBalyalari
+      value: 
+      objectReference: {fileID: 9207641206754021851}
+    - target: {fileID: 4102147239891449450, guid: 8f26668fe9ba7495cbc5929e3950521a, type: 3}
+      propertyPath: _kacinciTarla
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102147239891449450, guid: 8f26668fe9ba7495cbc5929e3950521a, type: 3}
+      propertyPath: _samanBalyalari
+      value: 
+      objectReference: {fileID: 9207641206754021851}
     - target: {fileID: 4102147240153645336, guid: 8f26668fe9ba7495cbc5929e3950521a, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -140,6 +172,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4468670916469808671, guid: 8f26668fe9ba7495cbc5929e3950521a, type: 3}
+      propertyPath: _kacinciTarla
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468670916469808671, guid: 8f26668fe9ba7495cbc5929e3950521a, type: 3}
+      propertyPath: _samanBalyalari
+      value: 
+      objectReference: {fileID: 9207641206754021851}
     - target: {fileID: 4878436560572163597, guid: 8f26668fe9ba7495cbc5929e3950521a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3
@@ -264,7 +304,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2013125363004710756, guid: ce03b888edcf145b1a10f91aae087b32, type: 3}
       propertyPath: _gerekliAltinSayisi
-      value: 25
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2013125363004710756, guid: ce03b888edcf145b1a10f91aae087b32, type: 3}
       propertyPath: _gerekliSamanSayisi
@@ -477,6 +517,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6436208446708854241, guid: ee57c52a582674a1aa040dda9ff3249b, type: 3}
   m_PrefabInstance: {fileID: 2781568292444290107}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &9207641206754021851 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6436208446708854240, guid: ee57c52a582674a1aa040dda9ff3249b, type: 3}
+  m_PrefabInstance: {fileID: 2781568292444290107}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3872469065668874237
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -510,7 +555,7 @@ PrefabInstance:
       objectReference: {fileID: 4152346977456663919}
     - target: {fileID: 5359494954110997615, guid: 4162e72f779ab4e62966009bc059a45d, type: 3}
       propertyPath: _ilkArastirmaGerekliSamanSayisi
-      value: 30
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 5466873179471882174, guid: 4162e72f779ab4e62966009bc059a45d, type: 3}
       propertyPath: m_RootOrder

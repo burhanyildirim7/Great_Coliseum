@@ -1509,7 +1509,7 @@ MonoBehaviour:
   - {fileID: 5500463734866553362}
   - {fileID: 137919677501248291}
   - {fileID: 4073718520465588875}
-  _ambarSpawnHizi: 5
+  _ambarSpawnHizi: 2.5
   _olusanUrunler: []
   _urunParent: {fileID: 274700577531659747}
   _gerekliUrunSayisi: 0

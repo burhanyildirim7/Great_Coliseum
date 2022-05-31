@@ -73,8 +73,44 @@ public class UIController : MonoBehaviour
         GamePanel.SetActive(false);
         LevelController.instance.NextLevelEvents();
         StartCoroutine(StartScreenCoinEffect());
+        SaveSifirla();
     }
 
+
+    private void SaveSifirla()
+    {
+
+        // Tarla PlayerPrefsler
+        PlayerPrefs.SetInt("BirinciTarlaAktif", 0);
+        PlayerPrefs.SetInt("IkinciTarlaAktif", 0);
+        PlayerPrefs.SetInt("UcuncuTarlaAktif", 0);
+        PlayerPrefs.SetInt("DorduncuTarlaAktif", 0);
+        PlayerPrefs.SetInt("BesinciTarlaAktif", 0);
+
+        // Kasap PlayerPrefs
+        PlayerPrefs.SetInt("KasapAktif", 0);
+
+        // Arastirma Binasi PlayerPrefs
+        PlayerPrefs.SetInt("ArastirmaTamamlandi", 0);
+
+        // Altin Madeni PlayerPrefs
+        PlayerPrefs.SetInt("AltinMadeniAktif", 0);
+
+        // Demir Madeni PlayerPrefs
+        PlayerPrefs.SetInt("DemirMadeniAktif", 0);
+
+        // Demirci PlayerPrefs
+        PlayerPrefs.SetInt("DemirciAktif", 0);
+
+        // Kisla PlayerPrefs
+        PlayerPrefs.SetInt("KislaAktif", 0);
+
+        // Kolezyum PlayerPrefsler
+        PlayerPrefs.SetInt("KolezyumGerekliSaman", 0);
+        PlayerPrefs.SetInt("KolezyumGerekliAltin", 0);
+        PlayerPrefs.SetInt("KolezyumGerekliGladyator", 0);
+
+    }
 
     /// <summary>
     /// Bu fonksiyon gameplay ekranindaki score textini gunceller.

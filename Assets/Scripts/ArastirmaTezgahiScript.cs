@@ -37,26 +37,35 @@ public class ArastirmaTezgahiScript : MonoBehaviour
 
     void Start()
     {
+        if (PlayerPrefs.GetInt("ArastirmaTamamlandi") == 1)
+        {
+            _sirtCantasiScript = GameObject.FindGameObjectWithTag("Player").GetComponent<SirtCantasiScript>();
+            _playerRigidbody = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>();
 
-        _canvasObject.SetActive(true);
-        _ilkArastirmaAcilacakBinaObject.SetActive(false);
+            _ilkArastirmaAcilacakBinaObject.SetActive(true);
 
-        _sirtCantasiScript = GameObject.FindGameObjectWithTag("Player").GetComponent<SirtCantasiScript>();
-        _playerRigidbody = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>();
-        //_meshRenderer = GetComponent<MeshRenderer>();
-        _samanIhtiyacText.text = _ilkArastirmaGerekliSamanSayisi.ToString();
-        _altinIhtiyacText.text = _ilkArastirmaGerekliAltinSayisi.ToString();
-        _demirIhtiyacText.text = _ilkArastirmaGerekliDemirSayisi.ToString();
+            _ilkBinaArastirmasiVarMi = false;
+            _canvasObject.SetActive(false);
+
+        }
+        else
+        {
+            _canvasObject.SetActive(true);
+            _ilkArastirmaAcilacakBinaObject.SetActive(false);
+
+            _sirtCantasiScript = GameObject.FindGameObjectWithTag("Player").GetComponent<SirtCantasiScript>();
+            _playerRigidbody = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>();
+            //_meshRenderer = GetComponent<MeshRenderer>();
+            _samanIhtiyacText.text = _ilkArastirmaGerekliSamanSayisi.ToString();
+            _altinIhtiyacText.text = _ilkArastirmaGerekliAltinSayisi.ToString();
+            _demirIhtiyacText.text = _ilkArastirmaGerekliDemirSayisi.ToString();
 
 
-        _timer = 0;
+            _timer = 0;
+        }
+
     }
 
-
-    void Update()
-    {
-
-    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -136,6 +145,7 @@ public class ArastirmaTezgahiScript : MonoBehaviour
                     {
                         _ilkArastirmaAcilacakBinaObject.SetActive(true);
                         _canvasObject.SetActive(false);
+                        PlayerPrefs.SetInt("ArastirmaTamamlandi", 1);
                     }
                 }
                 else

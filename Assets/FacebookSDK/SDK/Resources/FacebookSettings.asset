@@ -16,9 +16,9 @@ MonoBehaviour:
   clientTokens:
   - 
   appIds:
-  - 0
+  - 702791370990858
   appLabels:
-  - App Name
+  - Great Coliseum!
   cookie: 1
   logging: 1
   status: 1

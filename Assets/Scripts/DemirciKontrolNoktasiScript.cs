@@ -41,21 +41,49 @@ public class DemirciKontrolNoktasiScript : MonoBehaviour
 
     void Start()
     {
-        _demirMadeniObjesi.SetActive(true);
-        _demirMadeniObject.SetActive(false);
-        _mekanikObjesi.SetActive(false);
-        _malKabulObjesi.GetComponent<MeshRenderer>().enabled = false;
-        _kapanacakCanvas.SetActive(true);
-        _acilacakCanvas.SetActive(false);
+        if (PlayerPrefs.GetInt("DemirciAktif") == 1)
+        {
+            _sirtCantasiScript = GameObject.FindGameObjectWithTag("Player").GetComponent<SirtCantasiScript>();
+            _playerRigidbody = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>();
+            _meshRenderer = GetComponent<MeshRenderer>();
 
-        _sirtCantasiScript = GameObject.FindGameObjectWithTag("Player").GetComponent<SirtCantasiScript>();
-        _playerRigidbody = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>();
-        _meshRenderer = GetComponent<MeshRenderer>();
-        _ihtiyacSamanText.text = _gerekliSamanSayisi.ToString();
-        _ihtiyacDemirText.text = _gerekliDemirSayisi.ToString();
+            _demirMadeniObjesi.SetActive(true);
+            _kapanacakCanvas.SetActive(false);
+            _acilacakCanvas.SetActive(true);
+            _demirMadeniObject.SetActive(true);
+            _mekanikObjesi.SetActive(true);
+            _malKabulObjesi.SetActive(true);
+            _malKabulObjesi.GetComponent<MeshRenderer>().enabled = true;
+            _meshRenderer.enabled = false;
+            _ihtiyacSamanText.gameObject.SetActive(false);
+            _ihtiyacDemirText.gameObject.SetActive(false);
+            _gerekliUrunSayisiText.text = _kasapSpawnScript._gerekliUrunSayisi.ToString();
+            _calisiyor = true;
 
-        _calisiyor = false;
-        _timer = 0;
+            _gerekliSamanSayisi = 0;
+            _gerekliDemirSayisi = 0;
+
+            _timer = 0;
+        }
+        else
+        {
+            _demirMadeniObjesi.SetActive(true);
+            _demirMadeniObject.SetActive(false);
+            _mekanikObjesi.SetActive(false);
+            _malKabulObjesi.GetComponent<MeshRenderer>().enabled = false;
+            _kapanacakCanvas.SetActive(true);
+            _acilacakCanvas.SetActive(false);
+
+            _sirtCantasiScript = GameObject.FindGameObjectWithTag("Player").GetComponent<SirtCantasiScript>();
+            _playerRigidbody = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>();
+            _meshRenderer = GetComponent<MeshRenderer>();
+            _ihtiyacSamanText.text = _gerekliSamanSayisi.ToString();
+            _ihtiyacDemirText.text = _gerekliDemirSayisi.ToString();
+
+            _calisiyor = false;
+            _timer = 0;
+        }
+
     }
 
 
@@ -154,6 +182,7 @@ public class DemirciKontrolNoktasiScript : MonoBehaviour
                         _ihtiyacDemirText.gameObject.SetActive(false);
                         _gerekliUrunSayisiText.text = _kasapSpawnScript._gerekliUrunSayisi.ToString();
                         _calisiyor = true;
+                        PlayerPrefs.SetInt("DemirciAktif", 1);
 
                     }
                     else
