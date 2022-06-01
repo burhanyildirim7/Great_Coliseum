@@ -192,7 +192,7 @@ public class AmbarSpawnScript : MonoBehaviour
         }
         else
         {
-            _ambarSpawnHizi = 10;
+            _ambarSpawnHizi = 5;
         }
     }
 }
