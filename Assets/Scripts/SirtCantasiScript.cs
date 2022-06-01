@@ -366,6 +366,30 @@ public class SirtCantasiScript : MonoBehaviour
 
         }
 
+        int cantadakialtinobjesayi = _cantadakiAltinObjeleri.Count;
+        for (int i = 0; i < cantadakialtinobjesayi; i++)
+        {
+            Destroy(_cantadakiAltinObjeleri[0].gameObject);
+            _cantadakiAltinObjeleri.RemoveAt(0);
+
+        }
+
+        int cantadakietobjesayi = _cantadakiEtObjeleri.Count;
+        for (int i = 0; i < cantadakietobjesayi; i++)
+        {
+            Destroy(_cantadakiEtObjeleri[0].gameObject);
+            _cantadakiEtObjeleri.RemoveAt(0);
+
+        }
+
+        int cantadakidemirobjesayi = _cantadakiDemirObjeleri.Count;
+        for (int i = 0; i < cantadakidemirobjesayi; i++)
+        {
+            Destroy(_cantadakiDemirObjeleri[0].gameObject);
+            _cantadakiDemirObjeleri.RemoveAt(0);
+
+        }
+
         _cantadakiObjeSayisi = 0;
 
         _ilkTarlaAktif = false;

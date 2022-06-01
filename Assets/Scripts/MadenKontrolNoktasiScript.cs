@@ -50,7 +50,7 @@ public class MadenKontrolNoktasiScript : MonoBehaviour
             _acilacakCanvas.SetActive(true);
             _madenObject.SetActive(true);
             _mekanikObjesi.SetActive(true);
-            _malKabulObjesi.GetComponent<MeshRenderer>().enabled = true;
+            //_malKabulObjesi.GetComponent<MeshRenderer>().enabled = true;
             _meshRenderer.enabled = false;
             _ihtiyacText.gameObject.SetActive(false);
             _gerekliUrunSayisiText.text = _altinMadeniSpawnScript._gerekliUrunSayisi.ToString();
@@ -154,7 +154,7 @@ public class MadenKontrolNoktasiScript : MonoBehaviour
                             _acilacakCanvas.SetActive(true);
                             _madenObject.SetActive(true);
                             _mekanikObjesi.SetActive(true);
-                            _malKabulObjesi.GetComponent<MeshRenderer>().enabled = true;
+                            //_malKabulObjesi.GetComponent<MeshRenderer>().enabled = true;
                             _meshRenderer.enabled = false;
                             _ihtiyacText.gameObject.SetActive(false);
                             _gerekliUrunSayisiText.text = _altinMadeniSpawnScript._gerekliUrunSayisi.ToString();

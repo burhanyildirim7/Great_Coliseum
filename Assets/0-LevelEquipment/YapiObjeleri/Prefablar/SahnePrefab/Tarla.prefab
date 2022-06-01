@@ -200,7 +200,6 @@ GameObject:
   - component: {fileID: 3803406413502617470}
   - component: {fileID: 3803406413502617459}
   - component: {fileID: 3803406413502617456}
-  - component: {fileID: 1870634131970169328}
   m_Layer: 0
   m_Name: TarlaObje
   m_TagString: Untagged
@@ -304,26 +303,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!95 &1870634131970169328
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3803406413502617466}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3b349b2f9c43a4058a5511ce9c464921, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3803406413589522988
 GameObject:
   m_ObjectHideFlags: 0
@@ -465,6 +444,7 @@ MonoBehaviour:
   _aclikSlider: {fileID: 4902545186123810021}
   _calisanIsci: {fileID: 5749875360553583081}
   _farmerScript: {fileID: 5166331530173796859}
+  _buyuyecekTarla: {fileID: 4068778060698998258}
 --- !u!1 &3803406413873149961
 GameObject:
   m_ObjectHideFlags: 0
@@ -893,6 +873,11 @@ PrefabInstance:
 --- !u!4 &3692077283585920840 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 843105256388956558, guid: 5dee879df9de04f3e8458bc499cfe5ef, type: 3}
+  m_PrefabInstance: {fileID: 4075664727600635590}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4068778060698998258 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 69981093748820788, guid: 5dee879df9de04f3e8458bc499cfe5ef, type: 3}
   m_PrefabInstance: {fileID: 4075664727600635590}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &4902545186123810021 stripped

@@ -33,6 +33,8 @@ public class TarlaScript : MonoBehaviour
     [Header("Icerisindeki Calisan İsci Objesi")]
     [SerializeField] private GameObject _calisanIsci;
     [SerializeField] private FarmerScript _farmerScript;
+    [Header("Icerisindeki Buyuyecek Obje")]
+    [SerializeField] private GameObject _buyuyecekTarla;
 
 
 
@@ -228,6 +230,9 @@ public class TarlaScript : MonoBehaviour
                         _aclikSlider.value = 1;
                         _aktifMi = true;
 
+                        _buyuyecekTarla.transform.localScale = new Vector3(0, 0, 0);
+                        _buyuyecekTarla.transform.DOScale(new Vector3(0.2f, 4f, 0.4f), 0.5f);
+
 
                         if (_kacinciTarla == 1)
                         {
@@ -359,6 +364,8 @@ public class TarlaScript : MonoBehaviour
                     _aktifMi = true;
                     _gerekliMalzemeSayisi = 0;
                     SirtCantasiScript._ilkTarlaAktif = true;
+                    _buyuyecekTarla.transform.localScale = new Vector3(0, 0, 0);
+                    _buyuyecekTarla.transform.DOScale(new Vector3(0.2f, 4f, 0.4f), 0.5f);
 
 
                     /*
@@ -435,6 +442,8 @@ public class TarlaScript : MonoBehaviour
                     _aclikSlider.value = 1;
                     _aktifMi = true;
                     _gerekliMalzemeSayisi = 0;
+                    _buyuyecekTarla.transform.localScale = new Vector3(0, 0, 0);
+                    _buyuyecekTarla.transform.DOScale(new Vector3(0.2f, 4f, 0.4f), 0.5f);
 
 
 
@@ -511,6 +520,8 @@ public class TarlaScript : MonoBehaviour
                     _aclikSlider.value = 1;
                     _aktifMi = true;
                     _gerekliMalzemeSayisi = 0;
+                    _buyuyecekTarla.transform.localScale = new Vector3(0, 0, 0);
+                    _buyuyecekTarla.transform.DOScale(new Vector3(0.2f, 4f, 0.4f), 0.5f);
 
 
                     /*
@@ -587,6 +598,8 @@ public class TarlaScript : MonoBehaviour
                     _aclikSlider.value = 1;
                     _aktifMi = true;
                     _gerekliMalzemeSayisi = 0;
+                    _buyuyecekTarla.transform.localScale = new Vector3(0, 0, 0);
+                    _buyuyecekTarla.transform.DOScale(new Vector3(0.2f, 4f, 0.4f), 0.5f);
 
 
                     /*
@@ -663,6 +676,8 @@ public class TarlaScript : MonoBehaviour
                     _aclikSlider.value = 1;
                     _aktifMi = true;
                     _gerekliMalzemeSayisi = 0;
+                    _buyuyecekTarla.transform.localScale = new Vector3(0, 0, 0);
+                    _buyuyecekTarla.transform.DOScale(new Vector3(0.2f, 4f, 0.4f), 0.5f);
 
 
                     /*

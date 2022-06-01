@@ -3325,6 +3325,7 @@ MonoBehaviour:
   score: 0
   elmas: 0
   isContinue: 0
+  _kameraHareketli: 0
 --- !u!4 &1124119774
 Transform:
   m_ObjectHideFlags: 0
@@ -9180,7 +9181,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2264371042343823975
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -54,7 +54,7 @@ public class DemirciKontrolNoktasiScript : MonoBehaviour
             _demirMadeniObject.SetActive(true);
             _mekanikObjesi.SetActive(true);
             _malKabulObjesi.SetActive(true);
-            _malKabulObjesi.GetComponent<MeshRenderer>().enabled = true;
+            //_malKabulObjesi.GetComponent<MeshRenderer>().enabled = true;
             _meshRenderer.enabled = false;
             _ihtiyacSamanText.gameObject.SetActive(false);
             _ihtiyacDemirText.gameObject.SetActive(false);
@@ -200,7 +200,7 @@ public class DemirciKontrolNoktasiScript : MonoBehaviour
                             _demirMadeniObject.SetActive(true);
                             _mekanikObjesi.SetActive(true);
                             _malKabulObjesi.SetActive(true);
-                            _malKabulObjesi.GetComponent<MeshRenderer>().enabled = true;
+                            //_malKabulObjesi.GetComponent<MeshRenderer>().enabled = true;
                             _meshRenderer.enabled = false;
                             _ihtiyacSamanText.gameObject.SetActive(false);
                             _ihtiyacDemirText.gameObject.SetActive(false);

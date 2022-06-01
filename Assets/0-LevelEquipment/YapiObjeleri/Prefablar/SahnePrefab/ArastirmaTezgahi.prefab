@@ -4548,7 +4548,7 @@ Transform:
   m_GameObject: {fileID: 6497829743436746015}
   m_LocalRotation: {x: 0, y: 0.9659258, z: 0, w: 0.2588191}
   m_LocalPosition: {x: 2.1, y: 0, z: 2.271}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4251041208404409235}
@@ -5499,7 +5499,7 @@ Transform:
   m_GameObject: {fileID: 8285810232343593201}
   m_LocalRotation: {x: 0, y: 0.43169224, z: 0, w: 0.902021}
   m_LocalPosition: {x: -2.23, y: 0, z: -1.22}
-  m_LocalScale: {x: 0.85, y: 0.85, z: 0.85}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2296600308406095168}
@@ -5541,7 +5541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fb156fe05e7f41bca7047e4783ad6f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duranAdam: {fileID: 0}
+  duranAdam: {fileID: 6497829743436746015}
   arastirmaMasasi: {fileID: 8412219770397408635}
   tezgahCanvasi: {fileID: 5460914750495848401}
 --- !u!136 &4585078950956401193

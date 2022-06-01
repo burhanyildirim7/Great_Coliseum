@@ -210,6 +210,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4468670916242936721, guid: 8f26668fe9ba7495cbc5929e3950521a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4468670916469808671, guid: 8f26668fe9ba7495cbc5929e3950521a, type: 3}
       propertyPath: _kacinciTarla
       value: 1
