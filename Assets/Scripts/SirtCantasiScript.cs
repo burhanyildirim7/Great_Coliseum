@@ -393,5 +393,10 @@ public class SirtCantasiScript : MonoBehaviour
         _cantadakiObjeSayisi = 0;
 
         _ilkTarlaAktif = false;
+
+        _samanSayisiText.text = _cantadakiSamanObjeleri.Count.ToString();
+        _altinSayisiText.text = _cantadakiAltinObjeleri.Count.ToString();
+        _etSayisiText.text = _cantadakiEtObjeleri.Count.ToString();
+        _demirSayisiText.text = _cantadakiDemirObjeleri.Count.ToString();
     }
 }

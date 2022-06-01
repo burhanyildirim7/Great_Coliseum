@@ -30,6 +30,7 @@ public class TarlaScript : MonoBehaviour
     [SerializeField] private GameObject _canvasObject;
     [Header("Icerisindeki Aclik Slider")]
     [SerializeField] private Slider _aclikSlider;
+    [SerializeField] private GameObject _aclikImage;
     [Header("Icerisindeki Calisan İsci Objesi")]
     [SerializeField] private GameObject _calisanIsci;
     [SerializeField] private FarmerScript _farmerScript;
@@ -69,6 +70,7 @@ public class TarlaScript : MonoBehaviour
 
         _canvasObject.transform.DOScale(new Vector3(_canvasObject.transform.localScale.x * 1.5f, _canvasObject.transform.localScale.y * 1.5f, _canvasObject.transform.localScale.z * 1.5f), 2f).OnComplete(() => _canvasObject.transform.DOScale(new Vector3(_canvasObject.transform.localScale.x / 1.5f, _canvasObject.transform.localScale.y / 1.5f, _canvasObject.transform.localScale.z / 1.5f), 2f));
 
+        _aclikImage.SetActive(false);
 
         _timer = 0;
     }
@@ -90,6 +92,15 @@ public class TarlaScript : MonoBehaviour
                 else
                 {
 
+                }
+
+                if (_aclikSlider.value < 0.5f)
+                {
+                    _aclikImage.SetActive(true);
+                }
+                else
+                {
+                    _aclikImage.SetActive(false);
                 }
 
                 _aclikTimer = 0;

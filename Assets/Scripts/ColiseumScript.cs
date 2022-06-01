@@ -163,7 +163,18 @@ public class ColiseumScript : MonoBehaviour
                                 }
                                 else
                                 {
+                                    if (_sirtCantasiScript._cantadakiSamanObjeleri.Count > 0)
+                                    {
+                                        _sirtCantasiScript.SamanCek(_malKabulNoktasi);
+                                        //_gerekliSamanSayisi--;
+                                        //_samanIhtiyacText.text = _gerekliSamanSayisi.ToString();
+                                        _timer = 0;
+                                        //PlayerPrefs.SetInt("KolezyumGerekliSaman", _gerekliSamanSayisi);
+                                    }
+                                    else
+                                    {
 
+                                    }
                                 }
 
                                 if (_gerekliAltinSayisi > 0)
@@ -183,9 +194,47 @@ public class ColiseumScript : MonoBehaviour
                                 }
                                 else
                                 {
+                                    if (_sirtCantasiScript._cantadakiAltinObjeleri.Count > 0)
+                                    {
+                                        _sirtCantasiScript.AltinCek(_malKabulNoktasi);
+                                        //_gerekliAltinSayisi--;
+                                        //_altinIhtiyacText.text = _gerekliAltinSayisi.ToString();
+                                        _timer = 0;
+                                        //PlayerPrefs.SetInt("KolezyumGerekliAltin", _gerekliAltinSayisi);
+                                    }
+                                    else
+                                    {
+
+                                    }
+                                }
+
+                                /*
+                                if (_sirtCantasiScript._cantadakiDemirObjeleri.Count > 0)
+                                {
+                                    _sirtCantasiScript.DemirCek(_malKabulNoktasi);
+                                    //_gerekliAltinSayisi--;
+                                    //_altinIhtiyacText.text = _gerekliAltinSayisi.ToString();
+                                    _timer = 0;
+                                    //PlayerPrefs.SetInt("KolezyumGerekliAltin", _gerekliAltinSayisi);
+                                }
+                                else
+                                {
 
                                 }
 
+                                if (_sirtCantasiScript._cantadakiEtObjeleri.Count > 0)
+                                {
+                                    _sirtCantasiScript.EtCek(_malKabulNoktasi);
+                                    //_gerekliAltinSayisi--;
+                                    //_altinIhtiyacText.text = _gerekliAltinSayisi.ToString();
+                                    _timer = 0;
+                                    //PlayerPrefs.SetInt("KolezyumGerekliAltin", _gerekliAltinSayisi);
+                                }
+                                else
+                                {
+
+                                }
+                                */
 
                             }
                             else

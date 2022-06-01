@@ -4524,7 +4524,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ihtiyacText: {fileID: 146902651833868607}
   _gerekliUrunSayisiText: {fileID: 3824844616204910049}
-  _gerekliMalzemeSayisi: 50
+  _gerekliMalzemeSayisi: 15
   _kasapObject: {fileID: 5890910798000209455}
   _malKabulNoktasi: {fileID: 5299144428900534640}
   _mekanikObjesi: {fileID: 2619555262493602140}

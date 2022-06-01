@@ -15,6 +15,14 @@ public class ColiseumKabulNoktasiScript : MonoBehaviour
         {
             Destroy(other.gameObject);
         }
+        else if (other.gameObject.tag == "ToplanmisEt")
+        {
+            Destroy(other.gameObject);
+        }
+        else if (other.gameObject.tag == "ToplanmisDemir")
+        {
+            Destroy(other.gameObject);
+        }
         else if (other.gameObject.tag == "Gladyator")
         {
             Destroy(other.gameObject);

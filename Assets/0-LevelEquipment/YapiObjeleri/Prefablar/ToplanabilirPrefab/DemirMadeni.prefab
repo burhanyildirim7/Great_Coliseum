@@ -1931,8 +1931,8 @@ MonoBehaviour:
   _ihtiyacSamanText: {fileID: 2297514365586073819}
   _ihtiyacAltinText: {fileID: 2399451383317851115}
   _gerekliUrunSayisiText: {fileID: 7831649069872815423}
-  _gerekliSamanSayisi: 50
-  _gerekliAltinSayisi: 25
+  _gerekliSamanSayisi: 25
+  _gerekliAltinSayisi: 10
   _demirMadeniObject: {fileID: 5912434889925934724}
   _malKabulNoktasi: {fileID: 4568751128156225206}
   _mekanikObjesi: {fileID: 5960415804496168602}

@@ -442,6 +442,7 @@ MonoBehaviour:
   _sonrakiTarlaObject: {fileID: 0}
   _canvasObject: {fileID: 5264335111025644143}
   _aclikSlider: {fileID: 4902545186123810021}
+  _aclikImage: {fileID: 4541729799209134937}
   _calisanIsci: {fileID: 5749875360553583081}
   _farmerScript: {fileID: 5166331530173796859}
   _buyuyecekTarla: {fileID: 4068778060698998258}
@@ -878,6 +879,11 @@ Transform:
 --- !u!1 &4068778060698998258 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 69981093748820788, guid: 5dee879df9de04f3e8458bc499cfe5ef, type: 3}
+  m_PrefabInstance: {fileID: 4075664727600635590}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4541729799209134937 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 542925964067419551, guid: 5dee879df9de04f3e8458bc499cfe5ef, type: 3}
   m_PrefabInstance: {fileID: 4075664727600635590}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &4902545186123810021 stripped

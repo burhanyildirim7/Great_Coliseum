@@ -1877,7 +1877,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ihtiyacText: {fileID: 6464076876235858542}
   _gerekliUrunSayisiText: {fileID: 7208081841996349159}
-  _gerekliMalzemeSayisi: 50
+  _gerekliMalzemeSayisi: 10
   _madenObject: {fileID: 1452641805248023625}
   _malKabulNoktasi: {fileID: 4246631190257725230}
   _mekanikObjesi: {fileID: 6286955778550208258}
