@@ -94,7 +94,7 @@ public class TarlaScript : MonoBehaviour
 
                 }
 
-                if (_aclikSlider.value < 0.5f)
+                if (_aclikSlider.value < 0.3f)
                 {
                     _aclikImage.SetActive(true);
                 }
