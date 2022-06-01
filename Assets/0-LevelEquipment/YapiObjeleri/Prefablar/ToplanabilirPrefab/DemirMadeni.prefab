@@ -1830,8 +1830,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3002714734598954538}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.7111, y: 0, z: -5.0025}
-  m_LocalScale: {x: 5.004398, y: 0.099999994, z: 3.382639}
+  m_LocalPosition: {x: -4.7111, y: 0.001, z: -5.0025}
+  m_LocalScale: {x: 0.4, y: 0.1, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2130338511761683855}
@@ -1844,7 +1844,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3002714734598954538}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &5592378422519898560
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1865,7 +1865,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7c7d55488b3b54c3085faeabf96a41db, type: 2}
+  - {fileID: 2100000, guid: bebc4328a61094120b1637f6c7871329, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1898,8 +1898,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.3709345, y: 7.679157, z: 1}
-  m_Center: {x: 0.18546718, y: 3.3395777, z: 0}
+  m_Size: {x: 15, y: 2.5, z: 10}
+  m_Center: {x: 0, y: 1.25, z: 0}
 --- !u!54 &4026340504283298438
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4467,7 +4467,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6549989124338839449}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -5648,6 +5648,10 @@ PrefabInstance:
     - target: {fileID: 3843780159690491840, guid: 7478b03184f4545bb969adb6f53cc6d8, type: 3}
       propertyPath: m_Name
       value: tas_ocagi
+      objectReference: {fileID: 0}
+    - target: {fileID: 3843780159690491840, guid: 7478b03184f4545bb969adb6f53cc6d8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4475462146632424826, guid: 7478b03184f4545bb969adb6f53cc6d8, type: 3}
       propertyPath: m_RootOrder

@@ -200,6 +200,7 @@ GameObject:
   - component: {fileID: 3803406413502617470}
   - component: {fileID: 3803406413502617459}
   - component: {fileID: 3803406413502617456}
+  - component: {fileID: 1870634131970169328}
   m_Layer: 0
   m_Name: TarlaObje
   m_TagString: Untagged
@@ -303,6 +304,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!95 &1870634131970169328
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3803406413502617466}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3b349b2f9c43a4058a5511ce9c464921, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3803406413589522988
 GameObject:
   m_ObjectHideFlags: 0
@@ -332,8 +353,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3803406413589522988}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 0.1, z: 1.5}
+  m_LocalPosition: {x: 0, y: 0.02, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.1, z: 0.15}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3803406412290987284}
@@ -346,7 +367,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3803406413589522988}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &3803406413589522976
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -367,7 +388,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7c7d55488b3b54c3085faeabf96a41db, type: 2}
+  - {fileID: 2100000, guid: bebc4328a61094120b1637f6c7871329, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -400,8 +421,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 4.102212, z: 1}
-  m_Center: {x: 0, y: 1.5511047, z: 0}
+  m_Size: {x: 10, y: 1, z: 10}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!54 &3803406413589522990
 Rigidbody:
   m_ObjectHideFlags: 0

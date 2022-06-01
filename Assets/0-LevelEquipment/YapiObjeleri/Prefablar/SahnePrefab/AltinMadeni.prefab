@@ -1587,7 +1587,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2983652697602212439}
   m_LocalRotation: {x: -0, y: 0.2588191, z: -0, w: 0.9659259}
-  m_LocalPosition: {x: 0, y: 0, z: -1.65}
+  m_LocalPosition: {x: 0, y: 0, z: 1.24}
   m_LocalScale: {x: 0.006, y: 0.007, z: 0.007}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1601,7 +1601,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 30, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 2.86, y: 3.21}
+  m_AnchoredPosition: {x: -2.14, y: 3.21}
   m_SizeDelta: {x: 1000, y: 1000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &6179020026488167660
@@ -1776,14 +1776,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3180578472239517618}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.178, y: -0, z: -0.2843}
-  m_LocalScale: {x: 3.3403187, y: 0.099999994, z: 4.635299}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -0.178, y: 0.01, z: -0.2843}
+  m_LocalScale: {x: 0.4, y: 0.099999994, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1736170600284480535}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!33 &5913003698459347621
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1791,7 +1791,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3180578472239517618}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &5193909221318914136
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1812,7 +1812,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7c7d55488b3b54c3085faeabf96a41db, type: 2}
+  - {fileID: 2100000, guid: bebc4328a61094120b1637f6c7871329, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1845,8 +1845,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.7157226, y: 6.9197326, z: 1}
-  m_Center: {x: -0.016797736, y: 2.9598656, z: 0}
+  m_Size: {x: 10, y: 2, z: 20}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!54 &3632163250916813598
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3174,7 +3174,7 @@ RectTransform:
   m_GameObject: {fileID: 5547231371614256836}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 21}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5691705709096547507}
@@ -4151,7 +4151,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6876532667176599041}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

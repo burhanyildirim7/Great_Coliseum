@@ -173,7 +173,14 @@ public class ArastirmaTezgahiScript : MonoBehaviour
                             _ilkArastirmaAcilacakBinaObject.SetActive(true);
                             _canvasObject.SetActive(false);
                             PlayerPrefs.SetInt("ArastirmaTamamlandi", 1);
-                            _cameraMovement.KamerayiYonlendir(_ilkArastirmaAcilacakBinaObject);
+                            if (PlayerPrefs.GetInt("ArastirmaTamamlandi") == 1)
+                            {
+                               
+                            }
+                            else
+                            {
+                                _cameraMovement.KamerayiYonlendir(_ilkArastirmaAcilacakBinaObject);
+                            }
                         }
                     }
                     else
