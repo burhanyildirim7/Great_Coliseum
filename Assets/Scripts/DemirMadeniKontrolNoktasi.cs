@@ -213,9 +213,9 @@ public class DemirMadeniKontrolNoktasi : MonoBehaviour
 
                                 if (_timer > 0.1f)
                                 {
-                                    if (_sirtCantasiScript._cantadakiSamanObjeleri.Count > 0)
+                                    if (_sirtCantasiScript._cantadakiEtObjeleri.Count > 0)
                                     {
-                                        _sirtCantasiScript.SamanCek(_malKabulNoktasi);
+                                        _sirtCantasiScript.EtCek(_malKabulNoktasi);
                                         _kasapSpawnScript._gerekliUrunSayisi++;
                                         _gerekliUrunSayisiText.text = _kasapSpawnScript._gerekliUrunSayisi.ToString();
                                         //_ihtiyacText.text = _gerekliMalzemeSayisi.ToString();

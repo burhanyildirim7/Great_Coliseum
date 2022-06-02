@@ -9656,6 +9656,31 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4790378072768172, guid: c3f0e7ef5a3584d578af0304a3f9cb74, type: 3}
   m_PrefabInstance: {fileID: 354080871}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &355840020 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 29497749900194934, guid: 5b4e66c5be2284bdba742b8fb37845f7, type: 3}
+  m_PrefabInstance: {fileID: 7826152111771490256}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &355840022
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 355840020}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6a3ee37cda7164960b0fa7121e2909a9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &356561501
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58946,6 +58971,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.7946208
       objectReference: {fileID: 0}
+    - target: {fileID: 5684804260853211044, guid: 5b4e66c5be2284bdba742b8fb37845f7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5687271714953508660, guid: 5b4e66c5be2284bdba742b8fb37845f7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.000001261048
@@ -59446,6 +59475,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.021741342
       objectReference: {fileID: 0}
+    - target: {fileID: 8693054348092678805, guid: 5b4e66c5be2284bdba742b8fb37845f7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8998644619143416091, guid: 5b4e66c5be2284bdba742b8fb37845f7, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.427236e-10
@@ -59502,7 +59535,8 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.00093816983
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7839049688816550171, guid: 5b4e66c5be2284bdba742b8fb37845f7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5b4e66c5be2284bdba742b8fb37845f7, type: 3}
 --- !u!1001 &7842916014448889920
 PrefabInstance:
