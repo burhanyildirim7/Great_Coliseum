@@ -103,6 +103,10 @@ public class DemirMadeniKontrolNoktasi : MonoBehaviour
         {
             Destroy(other.gameObject);
         }
+        else if (other.gameObject.tag == "ToplanmisEt")
+        {
+            Destroy(other.gameObject);
+        }
         else if (other.gameObject.tag == "Player")
         {
             _acilacakCanvas.transform.DOScale(new Vector3(_acilacakCanvas.transform.localScale.x * 1.2f, _acilacakCanvas.transform.localScale.y * 1.2f, _acilacakCanvas.transform.localScale.z * 1.2f), 0.5f);

@@ -163,6 +163,7 @@ public class ColiseumScript : MonoBehaviour
                                 }
                                 else
                                 {
+                                    /*
                                     if (_sirtCantasiScript._cantadakiSamanObjeleri.Count > 0)
                                     {
                                         _sirtCantasiScript.SamanCek(_malKabulNoktasi);
@@ -175,6 +176,7 @@ public class ColiseumScript : MonoBehaviour
                                     {
 
                                     }
+                                    */
                                 }
 
                                 if (_gerekliAltinSayisi > 0)
@@ -194,6 +196,7 @@ public class ColiseumScript : MonoBehaviour
                                 }
                                 else
                                 {
+                                    /*
                                     if (_sirtCantasiScript._cantadakiAltinObjeleri.Count > 0)
                                     {
                                         _sirtCantasiScript.AltinCek(_malKabulNoktasi);
@@ -206,6 +209,7 @@ public class ColiseumScript : MonoBehaviour
                                     {
 
                                     }
+                                    */
                                 }
 
                                 /*

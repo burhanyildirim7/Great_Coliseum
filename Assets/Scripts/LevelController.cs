@@ -46,6 +46,7 @@ public class LevelController : MonoBehaviour
     /// </summary>
     public void LevelStartingEvents()
     {
+        /*
         if (totalLevelNo > levels.Count)
         {
             levelNo = Random.Range(1, levels.Count + 1);
@@ -55,6 +56,19 @@ public class LevelController : MonoBehaviour
         {
             levelNo = totalLevelNo;
         }
+        */
+
+        if (totalLevelNo > levels.Count)
+        {
+            levelNo = levels.Count;
+        }
+        else
+        {
+            levelNo = totalLevelNo;
+        }
+
+
+
         UIController.instance.SetLevelText(totalLevelNo);
         currentLevelObj = Instantiate(levels[levelNo - 1], Vector3.zero, Quaternion.identity);
         Elephant.LevelStarted(totalLevelNo);

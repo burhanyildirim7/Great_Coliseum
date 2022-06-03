@@ -32,6 +32,7 @@ TagManager:
   - GladyatorNokta2
   - GladyatorKontrol
   - Kolezyum
+  - DemirciMerkez
   layers:
   - Default
   - TransparentFX

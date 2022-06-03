@@ -39,6 +39,8 @@ public class DemirciSpawnScript : MonoBehaviour
     {
         _timer += Time.deltaTime;
 
+        GameObject.FindGameObjectWithTag("Kisla").GetComponent<KislaSpawnScript>().KislaKilicSayisiGüncelle(_ambarUrunSayisi);
+
         if (_gerekliUrunSayisi > 0)
         {
             _efektler.SetActive(true);
@@ -58,6 +60,7 @@ public class DemirciSpawnScript : MonoBehaviour
                         _ambarUrunSayisi++;
                         _gerekliUrunSayisi--;
                         _gerekliUrunSayisiText.text = _gerekliUrunSayisi.ToString();
+                        //GameObject.FindGameObjectWithTag("Kisla").GetComponent<KislaSpawnScript>().KislaKilicSayisiGüncelle(_ambarUrunSayisi);
 
                         _timer = 0;
                     }
@@ -81,6 +84,7 @@ public class DemirciSpawnScript : MonoBehaviour
                                 _ambarUrunSayisi++;
                                 _gerekliUrunSayisi--;
                                 _gerekliUrunSayisiText.text = _gerekliUrunSayisi.ToString();
+                                //GameObject.FindGameObjectWithTag("Kisla").GetComponent<KislaSpawnScript>().KislaKilicSayisiGüncelle(_ambarUrunSayisi);
 
                                 break;
                             }
@@ -97,6 +101,7 @@ public class DemirciSpawnScript : MonoBehaviour
                                 _ambarUrunSayisi++;
                                 _gerekliUrunSayisi--;
                                 _gerekliUrunSayisiText.text = _gerekliUrunSayisi.ToString();
+                                //GameObject.FindGameObjectWithTag("Kisla").GetComponent<KislaSpawnScript>().KislaKilicSayisiGüncelle(_ambarUrunSayisi);
 
                                 break;
 
@@ -136,6 +141,7 @@ public class DemirciSpawnScript : MonoBehaviour
                             _ambarUrunSayisi++;
                             _gerekliUrunSayisi--;
                             _gerekliUrunSayisiText.text = _gerekliUrunSayisi.ToString();
+                            //GameObject.FindGameObjectWithTag("Kisla").GetComponent<KislaSpawnScript>().KislaKilicSayisiGüncelle(_ambarUrunSayisi);
 
                             break;
                         }
@@ -152,6 +158,7 @@ public class DemirciSpawnScript : MonoBehaviour
                             _ambarUrunSayisi++;
                             _gerekliUrunSayisi--;
                             _gerekliUrunSayisiText.text = _gerekliUrunSayisi.ToString();
+                            //GameObject.FindGameObjectWithTag("Kisla").GetComponent<KislaSpawnScript>().KislaKilicSayisiGüncelle(_ambarUrunSayisi);
 
                             break;
 
