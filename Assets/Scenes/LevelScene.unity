@@ -20057,7 +20057,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &776899738
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -38350,7 +38350,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 1
+  orthographic: 0
   orthographic size: 10
   m_Depth: -1
   m_CullingMask:
@@ -38375,7 +38375,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1585788739}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: -0.52, y: 18, z: -19.32}
+  m_LocalPosition: {x: 3.6, y: 18, z: -24.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -60178,19 +60178,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5502934917226857090, guid: 5b4e66c5be2284bdba742b8fb37845f7, type: 3}
       propertyPath: shaderIndex
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5502934917226857090, guid: 5b4e66c5be2284bdba742b8fb37845f7, type: 3}
-      propertyPath: isMobilePlatform
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5502934917226857090, guid: 5b4e66c5be2284bdba742b8fb37845f7, type: 3}
+      propertyPath: isMobilePlatform
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5502934917226857090, guid: 5b4e66c5be2284bdba742b8fb37845f7, type: 3}
       propertyPath: shaderNames.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5502934917226857090, guid: 5b4e66c5be2284bdba742b8fb37845f7, type: 3}
       propertyPath: shaderNames.Array.data[0]
-      value: Desktop
+      value: Mobile
       objectReference: {fileID: 0}
     - target: {fileID: 5502934917226857090, guid: 5b4e66c5be2284bdba742b8fb37845f7, type: 3}
       propertyPath: shaderNames.Array.data[1]

@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 847127584660790496}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.75, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2738737304494861738}
@@ -120,6 +120,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 847127584660790509}
     m_Modifications:
     - target: {fileID: 2430251027217202499, guid: c33eb9681c85646f3b2249f7defbe6d9, type: 3}
@@ -179,6 +180,7 @@ PrefabInstance:
       value: demir
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: c33eb9681c85646f3b2249f7defbe6d9, type: 3}
 --- !u!4 &2738737304494861738 stripped
 Transform:

@@ -34,7 +34,7 @@ Transform:
   m_Children:
   - {fileID: 4490141034080389185}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6149179571627705750
 MeshFilter:
@@ -120,6 +120,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 1109423423287165037}
     m_Modifications:
     - target: {fileID: 8119302319206665554, guid: 654a960db3ff64176b8a9a1392115893, type: 3}
@@ -128,15 +129,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8119302319206665554, guid: 654a960db3ff64176b8a9a1392115893, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.2
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 8119302319206665554, guid: 654a960db3ff64176b8a9a1392115893, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 8119302319206665554, guid: 654a960db3ff64176b8a9a1392115893, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.5
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 8119302319206665554, guid: 654a960db3ff64176b8a9a1392115893, type: 3}
       propertyPath: m_LocalPosition.x
@@ -183,6 +184,7 @@ PrefabInstance:
       value: balya
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 654a960db3ff64176b8a9a1392115893, type: 3}
 --- !u!4 &4490141034080389185 stripped
 Transform:
