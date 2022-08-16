@@ -2324,6 +2324,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -2510,6 +2511,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -4778,7 +4780,7 @@ Transform:
   - {fileID: 228644754925309326}
   - {fileID: 3531942062526711730}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7642446145412884936
 GameObject:
@@ -5643,6 +5645,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 2130338511761683855}
     m_Modifications:
     - target: {fileID: 3843780159690491840, guid: 7478b03184f4545bb969adb6f53cc6d8, type: 3}
@@ -5659,7 +5662,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4475462146632424826, guid: 7478b03184f4545bb969adb6f53cc6d8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.1099987
+      value: -4.11
       objectReference: {fileID: 0}
     - target: {fileID: 4475462146632424826, guid: 7478b03184f4545bb969adb6f53cc6d8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5667,7 +5670,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4475462146632424826, guid: 7478b03184f4545bb969adb6f53cc6d8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.339998
+      value: -3.24
       objectReference: {fileID: 0}
     - target: {fileID: 4475462146632424826, guid: 7478b03184f4545bb969adb6f53cc6d8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5698,6 +5701,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 7478b03184f4545bb969adb6f53cc6d8, type: 3}
 --- !u!1 &5912434889925934724 stripped
 GameObject:
