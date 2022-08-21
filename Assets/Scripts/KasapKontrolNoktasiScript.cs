@@ -79,7 +79,7 @@ public class KasapKontrolNoktasiScript : MonoBehaviour
             _meshRenderer = GetComponent<MeshRenderer>();
             _ihtiyacText.text = _gerekliMalzemeSayisi.ToString();
 
-            _kapanacakCanvas.transform.DOScale(new Vector3(_kapanacakCanvas.transform.localScale.x * 1.5f, _kapanacakCanvas.transform.localScale.y * 1.5f, _kapanacakCanvas.transform.localScale.z * 1.5f), 2f).OnComplete(() => _kapanacakCanvas.transform.DOScale(new Vector3(_kapanacakCanvas.transform.localScale.x / 1.5f, _kapanacakCanvas.transform.localScale.y / 1.5f, _kapanacakCanvas.transform.localScale.z / 1.5f), 2f));
+            //_kapanacakCanvas.transform.DOScale(new Vector3(_kapanacakCanvas.transform.localScale.x * 1.5f, _kapanacakCanvas.transform.localScale.y * 1.5f, _kapanacakCanvas.transform.localScale.z * 1.5f), 2f).OnComplete(() => _kapanacakCanvas.transform.DOScale(new Vector3(_kapanacakCanvas.transform.localScale.x / 1.5f, _kapanacakCanvas.transform.localScale.y / 1.5f, _kapanacakCanvas.transform.localScale.z / 1.5f), 2f));
 
 
             _calisiyor = false;
@@ -102,8 +102,8 @@ public class KasapKontrolNoktasiScript : MonoBehaviour
         }
         else if (other.gameObject.tag == "Player")
         {
-            _acilacakCanvas.transform.DOScale(new Vector3(_acilacakCanvas.transform.localScale.x * 1.2f, _acilacakCanvas.transform.localScale.y * 1.2f, _acilacakCanvas.transform.localScale.z * 1.2f), 0.5f);
-            _kapanacakCanvas.transform.DOScale(new Vector3(_kapanacakCanvas.transform.localScale.x * 1.2f, _kapanacakCanvas.transform.localScale.y * 1.2f, _kapanacakCanvas.transform.localScale.z * 1.2f), 0.5f);
+            //_acilacakCanvas.transform.DOScale(new Vector3(_acilacakCanvas.transform.localScale.x * 1.2f, _acilacakCanvas.transform.localScale.y * 1.2f, _acilacakCanvas.transform.localScale.z * 1.2f), 0.5f);
+            //_kapanacakCanvas.transform.DOScale(new Vector3(_kapanacakCanvas.transform.localScale.x * 1.2f, _kapanacakCanvas.transform.localScale.y * 1.2f, _kapanacakCanvas.transform.localScale.z * 1.2f), 0.5f);
         }
         else
         {
@@ -115,8 +115,8 @@ public class KasapKontrolNoktasiScript : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            _acilacakCanvas.transform.DOScale(new Vector3(_acilacakCanvas.transform.localScale.x / 1.2f, _acilacakCanvas.transform.localScale.y / 1.2f, _acilacakCanvas.transform.localScale.z / 1.2f), 0.5f);
-            _kapanacakCanvas.transform.DOScale(new Vector3(_kapanacakCanvas.transform.localScale.x / 1.2f, _kapanacakCanvas.transform.localScale.y / 1.2f, _kapanacakCanvas.transform.localScale.z / 1.2f), 0.5f);
+            //_acilacakCanvas.transform.DOScale(new Vector3(_acilacakCanvas.transform.localScale.x / 1.2f, _acilacakCanvas.transform.localScale.y / 1.2f, _acilacakCanvas.transform.localScale.z / 1.2f), 0.5f);
+            //_kapanacakCanvas.transform.DOScale(new Vector3(_kapanacakCanvas.transform.localScale.x / 1.2f, _kapanacakCanvas.transform.localScale.y / 1.2f, _kapanacakCanvas.transform.localScale.z / 1.2f), 0.5f);
         }
         else
         {

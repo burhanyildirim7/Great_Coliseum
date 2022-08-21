@@ -22,7 +22,9 @@ public class SirtCantasiScript : MonoBehaviour
     [SerializeField] private Text _altinSayisiText;
     [SerializeField] private Text _etSayisiText;
     [SerializeField] private Text _demirSayisiText;
-
+    [Header("Tasiyici Agentlar")]
+    public List<GameObject> _tasiyiciAgentlar = new List<GameObject>();
+    public List<ParticleSystem> _tasiyiciAgentEfekt = new List<ParticleSystem>();
 
     private int _cantadakiObjeSayisi;
 
@@ -46,6 +48,84 @@ public class SirtCantasiScript : MonoBehaviour
     {
         CantayiDüzenle();
         CantayiHizala();
+
+        if (_cantadakiObjeSayisi > 0 && _cantadakiObjeSayisi < 6)
+        {
+            if (_tasiyiciAgentlar[0].activeSelf)
+            {
+
+            }
+            else
+            {
+                _tasiyiciAgentEfekt[0].Play();
+            }
+            _tasiyiciAgentlar[0].SetActive(true);
+            //_tasiyiciAgentEfekt[0].SetActive(true);
+            if (_tasiyiciAgentlar[1].activeSelf)
+            {
+                _tasiyiciAgentEfekt[1].Play();
+            }
+            else
+            {
+
+            }
+            _tasiyiciAgentlar[1].SetActive(false);
+            _tasiyiciAgentlar[2].SetActive(false);
+        }
+        else if (_cantadakiObjeSayisi >= 6 && _cantadakiObjeSayisi < 11)
+        {
+            _tasiyiciAgentlar[0].SetActive(true);
+            if (_tasiyiciAgentlar[1].activeSelf)
+            {
+
+            }
+            else
+            {
+                _tasiyiciAgentEfekt[1].Play();
+            }
+            _tasiyiciAgentlar[1].SetActive(true);
+            //_tasiyiciAgentEfekt[1].SetActive(true);
+            if (_tasiyiciAgentlar[2].activeSelf)
+            {
+                _tasiyiciAgentEfekt[2].Play();
+            }
+            else
+            {
+
+            }
+            _tasiyiciAgentlar[2].SetActive(false);
+        }
+        else if (_cantadakiObjeSayisi >= 11)
+        {
+            _tasiyiciAgentlar[0].SetActive(true);
+            _tasiyiciAgentlar[1].SetActive(true);
+            if (_tasiyiciAgentlar[2].activeSelf)
+            {
+
+            }
+            else
+            {
+                _tasiyiciAgentEfekt[2].Play();
+            }
+            _tasiyiciAgentlar[2].SetActive(true);
+            //_tasiyiciAgentEfekt[2].SetActive(true);
+        }
+        else
+        {
+            _tasiyiciAgentlar[1].SetActive(false);
+            _tasiyiciAgentlar[2].SetActive(false);
+
+            if (_tasiyiciAgentlar[0].activeSelf)
+            {
+                _tasiyiciAgentEfekt[0].Play();
+            }
+            else
+            {
+
+            }
+            _tasiyiciAgentlar[0].SetActive(false);
+
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -54,15 +134,18 @@ public class SirtCantasiScript : MonoBehaviour
         {
             if (_cantadakiObjeler.Count < _yerlesmeNoktalari.Count)
             {
-                other.gameObject.transform.parent = _sirtCantasiObject.transform;
+                int sira = _cantadakiObjeSayisi;
+                other.gameObject.transform.parent = _yerlesmeNoktalari[sira].transform;
+                //other.gameObject.transform.localScale = new Vector3(1, 0.5f, 0.5f);
                 _cantadakiObjeler.Add(other.gameObject);
                 _cantadakiSamanObjeleri.Add(other.gameObject);
                 other.gameObject.tag = "ToplanmisSamanBalyasi";
 
                 _samanSayisiText.text = _cantadakiSamanObjeleri.Count.ToString();
 
-                int sira = _cantadakiObjeSayisi;
-                other.gameObject.transform.DOLocalMove(new Vector3(_yerlesmeNoktalari[sira].localPosition.x, _yerlesmeNoktalari[sira].localPosition.y + 0.5f, _yerlesmeNoktalari[sira].localPosition.z - 0.5f), 0.5f).OnComplete(() => other.gameObject.transform.DOLocalMove(_yerlesmeNoktalari[sira].localPosition, 0.5f));
+
+                //other.gameObject.transform.DOLocalMove(new Vector3(_yerlesmeNoktalari[sira].localPosition.x, _yerlesmeNoktalari[sira].localPosition.y + 0.5f, _yerlesmeNoktalari[sira].localPosition.z - 0.5f), 0.5f).OnComplete(() => other.gameObject.transform.DOLocalMove(_yerlesmeNoktalari[sira].localPosition, 0.5f));
+                other.gameObject.transform.DOLocalJump(Vector3.zero, 2, 1, 0.5f);
                 other.gameObject.transform.DOLocalRotate(Vector3.zero, 1);
                 _cantadakiObjeSayisi++;
 
@@ -101,15 +184,18 @@ public class SirtCantasiScript : MonoBehaviour
         {
             if (_cantadakiObjeler.Count < _yerlesmeNoktalari.Count)
             {
-                other.gameObject.transform.parent = _sirtCantasiObject.transform;
+                int sira = _cantadakiObjeSayisi;
+                other.gameObject.transform.parent = _yerlesmeNoktalari[sira].transform;
+                //other.gameObject.transform.localScale = new Vector3(0.75f, 0.4f, 0.4f);
                 _cantadakiObjeler.Add(other.gameObject);
                 _cantadakiAltinObjeleri.Add(other.gameObject);
                 other.gameObject.tag = "ToplanmisAltin";
 
                 _altinSayisiText.text = _cantadakiAltinObjeleri.Count.ToString();
 
-                int sira = _cantadakiObjeSayisi;
-                other.gameObject.transform.DOLocalMove(new Vector3(_yerlesmeNoktalari[sira].localPosition.x, _yerlesmeNoktalari[sira].localPosition.y + 0.5f, _yerlesmeNoktalari[sira].localPosition.z - 0.5f), 0.5f).OnComplete(() => other.gameObject.transform.DOLocalMove(_yerlesmeNoktalari[sira].localPosition, 0.5f));
+
+                //other.gameObject.transform.DOLocalMove(new Vector3(_yerlesmeNoktalari[sira].localPosition.x, _yerlesmeNoktalari[sira].localPosition.y + 0.5f, _yerlesmeNoktalari[sira].localPosition.z - 0.5f), 0.5f).OnComplete(() => other.gameObject.transform.DOLocalMove(_yerlesmeNoktalari[sira].localPosition, 0.5f));
+                other.gameObject.transform.DOLocalJump(Vector3.zero, 2, 1, 0.5f);
                 other.gameObject.transform.DOLocalRotate(Vector3.zero, 1);
                 _cantadakiObjeSayisi++;
 
@@ -145,15 +231,18 @@ public class SirtCantasiScript : MonoBehaviour
         {
             if (_cantadakiObjeler.Count < _yerlesmeNoktalari.Count)
             {
-                other.gameObject.transform.parent = _sirtCantasiObject.transform;
+                int sira = _cantadakiObjeSayisi;
+                other.gameObject.transform.parent = _yerlesmeNoktalari[sira].transform;
+                //other.gameObject.transform.localScale = new Vector3(1, 0.5f, 0.5f);
                 _cantadakiObjeler.Add(other.gameObject);
                 _cantadakiEtObjeleri.Add(other.gameObject);
                 other.gameObject.tag = "ToplanmisEt";
 
                 _etSayisiText.text = _cantadakiEtObjeleri.Count.ToString();
 
-                int sira = _cantadakiObjeSayisi;
-                other.gameObject.transform.DOLocalMove(new Vector3(_yerlesmeNoktalari[sira].localPosition.x, _yerlesmeNoktalari[sira].localPosition.y + 0.5f, _yerlesmeNoktalari[sira].localPosition.z - 0.5f), 0.5f).OnComplete(() => other.gameObject.transform.DOLocalMove(_yerlesmeNoktalari[sira].localPosition, 0.5f));
+
+                //other.gameObject.transform.DOLocalMove(new Vector3(_yerlesmeNoktalari[sira].localPosition.x, _yerlesmeNoktalari[sira].localPosition.y + 0.5f, _yerlesmeNoktalari[sira].localPosition.z - 0.5f), 0.5f).OnComplete(() => other.gameObject.transform.DOLocalMove(_yerlesmeNoktalari[sira].localPosition, 0.5f));
+                other.gameObject.transform.DOLocalJump(Vector3.zero, 2, 1, 0.5f);
                 other.gameObject.transform.DOLocalRotate(Vector3.zero, 1);
                 _cantadakiObjeSayisi++;
 
@@ -189,15 +278,18 @@ public class SirtCantasiScript : MonoBehaviour
         {
             if (_cantadakiObjeler.Count < _yerlesmeNoktalari.Count)
             {
-                other.gameObject.transform.parent = _sirtCantasiObject.transform;
+                int sira = _cantadakiObjeSayisi;
+                other.gameObject.transform.parent = _yerlesmeNoktalari[sira].transform;
+                //other.gameObject.transform.localScale = new Vector3(1, 0.5f, 0.5f);
                 _cantadakiObjeler.Add(other.gameObject);
                 _cantadakiDemirObjeleri.Add(other.gameObject);
                 other.gameObject.tag = "ToplanmisDemir";
 
                 _demirSayisiText.text = _cantadakiDemirObjeleri.Count.ToString();
 
-                int sira = _cantadakiObjeSayisi;
-                other.gameObject.transform.DOLocalMove(new Vector3(_yerlesmeNoktalari[sira].localPosition.x, _yerlesmeNoktalari[sira].localPosition.y + 0.5f, _yerlesmeNoktalari[sira].localPosition.z - 0.5f), 0.5f).OnComplete(() => other.gameObject.transform.DOLocalMove(_yerlesmeNoktalari[sira].localPosition, 0.5f));
+
+                //other.gameObject.transform.DOLocalMove(new Vector3(_yerlesmeNoktalari[sira].localPosition.x, _yerlesmeNoktalari[sira].localPosition.y + 0.5f, _yerlesmeNoktalari[sira].localPosition.z - 0.5f), 0.5f).OnComplete(() => other.gameObject.transform.DOLocalMove(_yerlesmeNoktalari[sira].localPosition, 0.5f));
+                other.gameObject.transform.DOLocalJump(Vector3.zero, 2, 1, 0.5f);
                 other.gameObject.transform.DOLocalRotate(Vector3.zero, 1);
                 _cantadakiObjeSayisi++;
 
@@ -237,7 +329,9 @@ public class SirtCantasiScript : MonoBehaviour
         {
             int sira = _cantadakiSamanObjeleri.Count - 1;
             _cantadakiSamanObjeleri[_cantadakiSamanObjeleri.Count - 1].gameObject.transform.parent = null;
-            _cantadakiSamanObjeleri[_cantadakiSamanObjeleri.Count - 1].gameObject.transform.DOMove(malKabulNoktasi.position, 0.5f);
+            //_cantadakiSamanObjeleri[_cantadakiSamanObjeleri.Count - 1].gameObject.transform.localScale = new Vector3(1, 0.5f, 0.5f);
+            //_cantadakiSamanObjeleri[_cantadakiSamanObjeleri.Count - 1].gameObject.transform.DOMove(malKabulNoktasi.position, 0.5f);
+            _cantadakiSamanObjeleri[_cantadakiSamanObjeleri.Count - 1].gameObject.transform.DOLocalJump(malKabulNoktasi.position, 2, 1, 0.5f);
             _cantadakiSamanObjeleri[_cantadakiSamanObjeleri.Count - 1].gameObject.transform.DOLocalRotate(Vector3.zero, 0.5f);
             _cantadakiSamanObjeleri.RemoveAt(_cantadakiSamanObjeleri.Count - 1);
             _cantadakiObjeSayisi--;
@@ -259,7 +353,9 @@ public class SirtCantasiScript : MonoBehaviour
         {
             int sira = _cantadakiAltinObjeleri.Count - 1;
             _cantadakiAltinObjeleri[_cantadakiAltinObjeleri.Count - 1].gameObject.transform.parent = null;
-            _cantadakiAltinObjeleri[_cantadakiAltinObjeleri.Count - 1].gameObject.transform.DOMove(malKabulNoktasi.position, 0.5f);
+            //_cantadakiAltinObjeleri[_cantadakiAltinObjeleri.Count - 1].gameObject.transform.localScale = new Vector3(1, 0.5f, 0.5f);
+            //_cantadakiAltinObjeleri[_cantadakiAltinObjeleri.Count - 1].gameObject.transform.DOMove(malKabulNoktasi.position, 0.5f);
+            _cantadakiAltinObjeleri[_cantadakiAltinObjeleri.Count - 1].gameObject.transform.DOLocalJump(malKabulNoktasi.position, 2, 1, 0.5f);
             _cantadakiAltinObjeleri[_cantadakiAltinObjeleri.Count - 1].gameObject.transform.DOLocalRotate(Vector3.zero, 0.5f);
             _cantadakiAltinObjeleri.RemoveAt(_cantadakiAltinObjeleri.Count - 1);
             _cantadakiObjeSayisi--;
@@ -281,7 +377,9 @@ public class SirtCantasiScript : MonoBehaviour
         {
             int sira = _cantadakiEtObjeleri.Count - 1;
             _cantadakiEtObjeleri[_cantadakiEtObjeleri.Count - 1].gameObject.transform.parent = null;
-            _cantadakiEtObjeleri[_cantadakiEtObjeleri.Count - 1].gameObject.transform.DOMove(malKabulNoktasi.position, 0.5f);
+            //_cantadakiEtObjeleri[_cantadakiEtObjeleri.Count - 1].gameObject.transform.localScale = new Vector3(1, 0.5f, 0.5f);
+            //_cantadakiEtObjeleri[_cantadakiEtObjeleri.Count - 1].gameObject.transform.DOMove(malKabulNoktasi.position, 0.5f);
+            _cantadakiEtObjeleri[_cantadakiEtObjeleri.Count - 1].gameObject.transform.DOLocalJump(malKabulNoktasi.position, 2, 1, 0.5f);
             _cantadakiEtObjeleri[_cantadakiEtObjeleri.Count - 1].gameObject.transform.DOLocalRotate(Vector3.zero, 0.5f);
             _cantadakiEtObjeleri.RemoveAt(_cantadakiEtObjeleri.Count - 1);
             _cantadakiObjeSayisi--;
@@ -303,7 +401,9 @@ public class SirtCantasiScript : MonoBehaviour
         {
             int sira = _cantadakiDemirObjeleri.Count - 1;
             _cantadakiDemirObjeleri[_cantadakiDemirObjeleri.Count - 1].gameObject.transform.parent = null;
-            _cantadakiDemirObjeleri[_cantadakiDemirObjeleri.Count - 1].gameObject.transform.DOMove(malKabulNoktasi.position, 0.5f);
+            //_cantadakiDemirObjeleri[_cantadakiDemirObjeleri.Count - 1].gameObject.transform.localScale = new Vector3(1, 0.5f, 0.5f);
+            //_cantadakiDemirObjeleri[_cantadakiDemirObjeleri.Count - 1].gameObject.transform.DOMove(malKabulNoktasi.position, 0.5f);
+            _cantadakiDemirObjeleri[_cantadakiDemirObjeleri.Count - 1].gameObject.transform.DOLocalJump(malKabulNoktasi.position, 2, 1, 0.5f);
             _cantadakiDemirObjeleri[_cantadakiDemirObjeleri.Count - 1].gameObject.transform.DOLocalRotate(Vector3.zero, 0.5f);
             _cantadakiDemirObjeleri.RemoveAt(_cantadakiDemirObjeleri.Count - 1);
             _cantadakiObjeSayisi--;
@@ -339,9 +439,20 @@ public class SirtCantasiScript : MonoBehaviour
 
     private void CantayiHizala()
     {
-        for (int i = 0; i < _sirtCantasiObject.transform.childCount; i++)
+        for (int i = 0; i < _cantadakiObjeler.Count; i++)
         {
-            _sirtCantasiObject.transform.GetChild(i).transform.position = _yerlesmeNoktalari[i].transform.position;
+            //_sirtCantasiObject.transform.GetChild(i).transform.position = _yerlesmeNoktalari[i].transform.position;
+            if (_cantadakiObjeler[i].transform.parent != null)
+            {
+                _cantadakiObjeler[i].transform.parent = _yerlesmeNoktalari[i].transform;
+                _cantadakiObjeler[i].transform.localPosition = Vector3.zero;
+                _cantadakiObjeler[i].transform.eulerAngles = _yerlesmeNoktalari[i].transform.eulerAngles;
+            }
+            else
+            {
+
+            }
+            //burada listeye gore sorgulayip her birinin parentini bastan ayarlamak gerekiyor
         }
 
 
