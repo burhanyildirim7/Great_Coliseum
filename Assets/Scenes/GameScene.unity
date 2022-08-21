@@ -8984,6 +8984,10 @@ MonoBehaviour:
   _altinSayisiText: {fileID: 1278589619}
   _etSayisiText: {fileID: 1404267342}
   _demirSayisiText: {fileID: 1744711749}
+  _samanSayisiObject: {fileID: 670712545}
+  _altinSayisiObject: {fileID: 1835881849}
+  _etSayisiObject: {fileID: 717208092}
+  _demirSayisiObject: {fileID: 785367967}
   _tasiyiciAgentlar:
   - {fileID: 2003361883766602333}
   - {fileID: 796287738}

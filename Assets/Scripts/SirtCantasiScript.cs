@@ -22,6 +22,10 @@ public class SirtCantasiScript : MonoBehaviour
     [SerializeField] private Text _altinSayisiText;
     [SerializeField] private Text _etSayisiText;
     [SerializeField] private Text _demirSayisiText;
+    [SerializeField] private GameObject _samanSayisiObject;
+    [SerializeField] private GameObject _altinSayisiObject;
+    [SerializeField] private GameObject _etSayisiObject;
+    [SerializeField] private GameObject _demirSayisiObject;
     [Header("Tasiyici Agentlar")]
     public List<GameObject> _tasiyiciAgentlar = new List<GameObject>();
     public List<ParticleSystem> _tasiyiciAgentEfekt = new List<ParticleSystem>();
@@ -41,6 +45,42 @@ public class SirtCantasiScript : MonoBehaviour
         _demirSayisiText.text = _cantadakiDemirObjeleri.Count.ToString();
         _kilicVar = false;
         _ilkTarlaAktif = false;
+
+        if (_cantadakiSamanObjeleri.Count > 0)
+        {
+            _samanSayisiObject.SetActive(true);
+        }
+        else
+        {
+            _samanSayisiObject.SetActive(false);
+        }
+
+        if (_cantadakiAltinObjeleri.Count > 0)
+        {
+            _altinSayisiObject.SetActive(true);
+        }
+        else
+        {
+            _altinSayisiObject.SetActive(false);
+        }
+
+        if (_cantadakiEtObjeleri.Count > 0)
+        {
+            _etSayisiObject.SetActive(true);
+        }
+        else
+        {
+            _etSayisiObject.SetActive(false);
+        }
+
+        if (_cantadakiDemirObjeleri.Count > 0)
+        {
+            _demirSayisiObject.SetActive(true);
+        }
+        else
+        {
+            _demirSayisiObject.SetActive(false);
+        }
 
     }
 
@@ -143,6 +183,14 @@ public class SirtCantasiScript : MonoBehaviour
 
                 _samanSayisiText.text = _cantadakiSamanObjeleri.Count.ToString();
 
+                if (_cantadakiSamanObjeleri.Count > 0)
+                {
+                    _samanSayisiObject.SetActive(true);
+                }
+                else
+                {
+                    _samanSayisiObject.SetActive(false);
+                }
 
                 //other.gameObject.transform.DOLocalMove(new Vector3(_yerlesmeNoktalari[sira].localPosition.x, _yerlesmeNoktalari[sira].localPosition.y + 0.5f, _yerlesmeNoktalari[sira].localPosition.z - 0.5f), 0.5f).OnComplete(() => other.gameObject.transform.DOLocalMove(_yerlesmeNoktalari[sira].localPosition, 0.5f));
                 other.gameObject.transform.DOLocalJump(Vector3.zero, 2, 1, 0.5f);
@@ -193,6 +241,15 @@ public class SirtCantasiScript : MonoBehaviour
 
                 _altinSayisiText.text = _cantadakiAltinObjeleri.Count.ToString();
 
+                if (_cantadakiAltinObjeleri.Count > 0)
+                {
+                    _altinSayisiObject.SetActive(true);
+                }
+                else
+                {
+                    _altinSayisiObject.SetActive(false);
+                }
+
 
                 //other.gameObject.transform.DOLocalMove(new Vector3(_yerlesmeNoktalari[sira].localPosition.x, _yerlesmeNoktalari[sira].localPosition.y + 0.5f, _yerlesmeNoktalari[sira].localPosition.z - 0.5f), 0.5f).OnComplete(() => other.gameObject.transform.DOLocalMove(_yerlesmeNoktalari[sira].localPosition, 0.5f));
                 other.gameObject.transform.DOLocalJump(Vector3.zero, 2, 1, 0.5f);
@@ -240,6 +297,15 @@ public class SirtCantasiScript : MonoBehaviour
 
                 _etSayisiText.text = _cantadakiEtObjeleri.Count.ToString();
 
+                if (_cantadakiEtObjeleri.Count > 0)
+                {
+                    _etSayisiObject.SetActive(true);
+                }
+                else
+                {
+                    _etSayisiObject.SetActive(false);
+                }
+
 
                 //other.gameObject.transform.DOLocalMove(new Vector3(_yerlesmeNoktalari[sira].localPosition.x, _yerlesmeNoktalari[sira].localPosition.y + 0.5f, _yerlesmeNoktalari[sira].localPosition.z - 0.5f), 0.5f).OnComplete(() => other.gameObject.transform.DOLocalMove(_yerlesmeNoktalari[sira].localPosition, 0.5f));
                 other.gameObject.transform.DOLocalJump(Vector3.zero, 2, 1, 0.5f);
@@ -286,6 +352,15 @@ public class SirtCantasiScript : MonoBehaviour
                 other.gameObject.tag = "ToplanmisDemir";
 
                 _demirSayisiText.text = _cantadakiDemirObjeleri.Count.ToString();
+
+                if (_cantadakiDemirObjeleri.Count > 0)
+                {
+                    _demirSayisiObject.SetActive(true);
+                }
+                else
+                {
+                    _demirSayisiObject.SetActive(false);
+                }
 
 
                 //other.gameObject.transform.DOLocalMove(new Vector3(_yerlesmeNoktalari[sira].localPosition.x, _yerlesmeNoktalari[sira].localPosition.y + 0.5f, _yerlesmeNoktalari[sira].localPosition.z - 0.5f), 0.5f).OnComplete(() => other.gameObject.transform.DOLocalMove(_yerlesmeNoktalari[sira].localPosition, 0.5f));
@@ -337,6 +412,15 @@ public class SirtCantasiScript : MonoBehaviour
             _cantadakiObjeSayisi--;
             _samanSayisiText.text = _cantadakiSamanObjeleri.Count.ToString();
 
+            if (_cantadakiSamanObjeleri.Count > 0)
+            {
+                _samanSayisiObject.SetActive(true);
+            }
+            else
+            {
+                _samanSayisiObject.SetActive(false);
+            }
+
             MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
             //CantayiDüzenle();
 
@@ -360,6 +444,15 @@ public class SirtCantasiScript : MonoBehaviour
             _cantadakiAltinObjeleri.RemoveAt(_cantadakiAltinObjeleri.Count - 1);
             _cantadakiObjeSayisi--;
             _altinSayisiText.text = _cantadakiAltinObjeleri.Count.ToString();
+
+            if (_cantadakiAltinObjeleri.Count > 0)
+            {
+                _altinSayisiObject.SetActive(true);
+            }
+            else
+            {
+                _altinSayisiObject.SetActive(false);
+            }
 
             MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
             //CantayiDüzenle();
@@ -385,6 +478,15 @@ public class SirtCantasiScript : MonoBehaviour
             _cantadakiObjeSayisi--;
             _etSayisiText.text = _cantadakiEtObjeleri.Count.ToString();
 
+            if (_cantadakiEtObjeleri.Count > 0)
+            {
+                _etSayisiObject.SetActive(true);
+            }
+            else
+            {
+                _etSayisiObject.SetActive(false);
+            }
+
             MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
             //CantayiDüzenle();
 
@@ -408,6 +510,15 @@ public class SirtCantasiScript : MonoBehaviour
             _cantadakiDemirObjeleri.RemoveAt(_cantadakiDemirObjeleri.Count - 1);
             _cantadakiObjeSayisi--;
             _demirSayisiText.text = _cantadakiDemirObjeleri.Count.ToString();
+
+            if (_cantadakiDemirObjeleri.Count > 0)
+            {
+                _demirSayisiObject.SetActive(true);
+            }
+            else
+            {
+                _demirSayisiObject.SetActive(false);
+            }
 
             MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact);
             //CantayiDüzenle();
