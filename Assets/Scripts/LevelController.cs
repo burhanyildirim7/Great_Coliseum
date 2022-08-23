@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using ElephantSDK;
+//using ElephantSDK;
 
 public class LevelController : MonoBehaviour
 {
@@ -71,7 +71,10 @@ public class LevelController : MonoBehaviour
 
         UIController.instance.SetLevelText(totalLevelNo);
         currentLevelObj = Instantiate(levels[levelNo - 1], Vector3.zero, Quaternion.identity);
-        Elephant.LevelStarted(totalLevelNo);
+
+        AppMetrica.Instance.ReportEvent("level_start", totalLevelNo.ToString());
+        AppMetrica.Instance.SendEventsBuffer();
+        //Elephant.LevelStarted(totalLevelNo);
 
     }
 
@@ -80,7 +83,11 @@ public class LevelController : MonoBehaviour
     /// </summary>
     public void NextLevelEvents()
     {
-        Elephant.LevelCompleted(totalLevelNo);
+        //Elephant.LevelCompleted(totalLevelNo);
+
+        AppMetrica.Instance.ReportEvent("level_finish", totalLevelNo.ToString());
+        AppMetrica.Instance.SendEventsBuffer();
+
         Destroy(currentLevelObj);
         IncreaseLevelNo();
         LevelStartingEvents();
@@ -91,7 +98,10 @@ public class LevelController : MonoBehaviour
     {
         UIController.instance.SetLevelText(totalLevelNo);
         currentLevelObj = Instantiate(levels[levelNo - 1], Vector3.zero, Quaternion.identity);
-        Elephant.LevelStarted(totalLevelNo);
+
+        AppMetrica.Instance.ReportEvent("level_start", totalLevelNo.ToString());
+        AppMetrica.Instance.SendEventsBuffer();
+        //Elephant.LevelStarted(totalLevelNo);
     }
 
     /// <summary>
@@ -99,7 +109,11 @@ public class LevelController : MonoBehaviour
     /// </summary>
     public void RestartLevelEvents()
     {
-        Elephant.LevelFailed(totalLevelNo);
+        //Elephant.LevelFailed(totalLevelNo);
+
+        AppMetrica.Instance.ReportEvent("level_finish", totalLevelNo.ToString());
+        AppMetrica.Instance.SendEventsBuffer();
+
         PlayerController.instance.StartingEvents();
         Destroy(currentLevelObj);
         LevelRestartEvents();
