@@ -75,7 +75,7 @@ public class LevelController : MonoBehaviour
 
         _yollanacakLevel = totalLevelNo.ToString();
         string gönderilenLevel = JsonUtility.ToJson(_yollanacakLevel);
-        AppMetrica.Instance.ReportEvent("level_start", gönderilenLevel);
+        AppMetrica.Instance.ReportEvent("level_start - " + totalLevelNo.ToString());
         AppMetrica.Instance.SendEventsBuffer();
         //Elephant.LevelStarted(totalLevelNo);
 
@@ -89,8 +89,8 @@ public class LevelController : MonoBehaviour
         //Elephant.LevelCompleted(totalLevelNo);
         _yollanacakLevel = totalLevelNo.ToString();
         string gönderilenLevel = JsonUtility.ToJson(_yollanacakLevel);
-        AppMetrica.Instance.ReportEvent("level_finish", gönderilenLevel);
-        AppMetrica.Instance.SendEventsBuffer();
+        //AppMetrica.Instance.ReportEvent("level_finish - " + totalLevelNo.ToString());
+        //AppMetrica.Instance.SendEventsBuffer();
 
         Destroy(currentLevelObj);
         IncreaseLevelNo();
@@ -105,7 +105,7 @@ public class LevelController : MonoBehaviour
 
         _yollanacakLevel = totalLevelNo.ToString();
         string gönderilenLevel = JsonUtility.ToJson(_yollanacakLevel);
-        AppMetrica.Instance.ReportEvent("level_start", gönderilenLevel);
+        AppMetrica.Instance.ReportEvent("level_start - " + totalLevelNo.ToString());
         AppMetrica.Instance.SendEventsBuffer();
         //Elephant.LevelStarted(totalLevelNo);
     }
@@ -118,8 +118,8 @@ public class LevelController : MonoBehaviour
         //Elephant.LevelFailed(totalLevelNo);
         _yollanacakLevel = totalLevelNo.ToString();
         string gönderilenLevel = JsonUtility.ToJson(_yollanacakLevel);
-        AppMetrica.Instance.ReportEvent("level_finish", gönderilenLevel);
-        AppMetrica.Instance.SendEventsBuffer();
+        //AppMetrica.Instance.ReportEvent("level_finish - " + totalLevelNo.ToString());
+        //AppMetrica.Instance.SendEventsBuffer();
 
         PlayerController.instance.StartingEvents();
         Destroy(currentLevelObj);
