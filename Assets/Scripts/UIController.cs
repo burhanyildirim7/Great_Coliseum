@@ -72,7 +72,7 @@ public class UIController : MonoBehaviour
         WinPanel.SetActive(false);
         GamePanel.SetActive(false);
         LevelController.instance.NextLevelEvents();
-        StartCoroutine(StartScreenCoinEffect());
+        //StartCoroutine(StartScreenCoinEffect());
         SaveSifirla();
     }
 

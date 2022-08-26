@@ -9,6 +9,7 @@ public class LevelController : MonoBehaviour
     public int levelNo, tempLevelNo, totalLevelNo; // totallevelno tum leveller bitip random level gelmeye baslayinca kullaniliyor
     public List<GameObject> levels = new List<GameObject>();
     private GameObject currentLevelObj;
+    public string _yollanacakLevel;
 
     private void Awake()
     {
@@ -72,7 +73,9 @@ public class LevelController : MonoBehaviour
         UIController.instance.SetLevelText(totalLevelNo);
         currentLevelObj = Instantiate(levels[levelNo - 1], Vector3.zero, Quaternion.identity);
 
-        AppMetrica.Instance.ReportEvent("level_start", totalLevelNo.ToString());
+        _yollanacakLevel = totalLevelNo.ToString();
+        string gönderilenLevel = JsonUtility.ToJson(_yollanacakLevel);
+        AppMetrica.Instance.ReportEvent("level_start", gönderilenLevel);
         AppMetrica.Instance.SendEventsBuffer();
         //Elephant.LevelStarted(totalLevelNo);
 
@@ -84,8 +87,9 @@ public class LevelController : MonoBehaviour
     public void NextLevelEvents()
     {
         //Elephant.LevelCompleted(totalLevelNo);
-
-        AppMetrica.Instance.ReportEvent("level_finish", totalLevelNo.ToString());
+        _yollanacakLevel = totalLevelNo.ToString();
+        string gönderilenLevel = JsonUtility.ToJson(_yollanacakLevel);
+        AppMetrica.Instance.ReportEvent("level_finish", gönderilenLevel);
         AppMetrica.Instance.SendEventsBuffer();
 
         Destroy(currentLevelObj);
@@ -99,7 +103,9 @@ public class LevelController : MonoBehaviour
         UIController.instance.SetLevelText(totalLevelNo);
         currentLevelObj = Instantiate(levels[levelNo - 1], Vector3.zero, Quaternion.identity);
 
-        AppMetrica.Instance.ReportEvent("level_start", totalLevelNo.ToString());
+        _yollanacakLevel = totalLevelNo.ToString();
+        string gönderilenLevel = JsonUtility.ToJson(_yollanacakLevel);
+        AppMetrica.Instance.ReportEvent("level_start", gönderilenLevel);
         AppMetrica.Instance.SendEventsBuffer();
         //Elephant.LevelStarted(totalLevelNo);
     }
@@ -110,8 +116,9 @@ public class LevelController : MonoBehaviour
     public void RestartLevelEvents()
     {
         //Elephant.LevelFailed(totalLevelNo);
-
-        AppMetrica.Instance.ReportEvent("level_finish", totalLevelNo.ToString());
+        _yollanacakLevel = totalLevelNo.ToString();
+        string gönderilenLevel = JsonUtility.ToJson(_yollanacakLevel);
+        AppMetrica.Instance.ReportEvent("level_finish", gönderilenLevel);
         AppMetrica.Instance.SendEventsBuffer();
 
         PlayerController.instance.StartingEvents();

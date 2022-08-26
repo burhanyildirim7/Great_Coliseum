@@ -14,6 +14,7 @@ public class MadenKontrolNoktasiScript : MonoBehaviour
     public int _gerekliMalzemeSayisi;
     [Header("Malzeme Tamamlaninca Acilacak Maden Objesi")]
     public GameObject _madenObject;
+    public GameObject _anaMadenObject;
     [Header("Cekilen Malzemenin Gidecegi Transform")]
     public Transform _malKabulNoktasi;
     [Header("Icinde Kod Olan Obje")]
@@ -49,6 +50,7 @@ public class MadenKontrolNoktasiScript : MonoBehaviour
             _kapanacakCanvas.SetActive(false);
             _acilacakCanvas.SetActive(true);
             _madenObject.SetActive(true);
+            _anaMadenObject.SetActive(true);
             _mekanikObjesi.SetActive(true);
             //_malKabulObjesi.GetComponent<MeshRenderer>().enabled = true;
             _meshRenderer.enabled = false;
@@ -63,6 +65,7 @@ public class MadenKontrolNoktasiScript : MonoBehaviour
         else
         {
             _madenObject.SetActive(false);
+            _anaMadenObject.SetActive(false);
             _mekanikObjesi.SetActive(false);
             _malKabulObjesi.GetComponent<MeshRenderer>().enabled = false;
             _kapanacakCanvas.SetActive(true);
@@ -153,6 +156,9 @@ public class MadenKontrolNoktasiScript : MonoBehaviour
                             _kapanacakCanvas.SetActive(false);
                             _acilacakCanvas.SetActive(true);
                             _madenObject.SetActive(true);
+                            _anaMadenObject.SetActive(true);
+                            _anaMadenObject.transform.localPosition = new Vector3(0, -0.06f, 6f);
+                            _anaMadenObject.transform.DOLocalMoveZ(1.25f, 1f);
                             _mekanikObjesi.SetActive(true);
                             //_malKabulObjesi.GetComponent<MeshRenderer>().enabled = true;
                             _meshRenderer.enabled = false;

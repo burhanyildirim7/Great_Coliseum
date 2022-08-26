@@ -620,5 +620,41 @@ public class SirtCantasiScript : MonoBehaviour
         _altinSayisiText.text = _cantadakiAltinObjeleri.Count.ToString();
         _etSayisiText.text = _cantadakiEtObjeleri.Count.ToString();
         _demirSayisiText.text = _cantadakiDemirObjeleri.Count.ToString();
+
+        if (_cantadakiSamanObjeleri.Count > 0)
+        {
+            _samanSayisiObject.SetActive(true);
+        }
+        else
+        {
+            _samanSayisiObject.SetActive(false);
+        }
+
+        if (_cantadakiAltinObjeleri.Count > 0)
+        {
+            _altinSayisiObject.SetActive(true);
+        }
+        else
+        {
+            _altinSayisiObject.SetActive(false);
+        }
+
+        if (_cantadakiEtObjeleri.Count > 0)
+        {
+            _etSayisiObject.SetActive(true);
+        }
+        else
+        {
+            _etSayisiObject.SetActive(false);
+        }
+
+        if (_cantadakiDemirObjeleri.Count > 0)
+        {
+            _demirSayisiObject.SetActive(true);
+        }
+        else
+        {
+            _demirSayisiObject.SetActive(false);
+        }
     }
 }
