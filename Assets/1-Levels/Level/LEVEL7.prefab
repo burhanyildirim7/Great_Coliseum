@@ -315,6 +315,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ArastirmaTezgahi
       objectReference: {fileID: 0}
+    - target: {fileID: 1080965953562729996, guid: 4162e72f779ab4e62966009bc059a45d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5104832167257805450, guid: 4162e72f779ab4e62966009bc059a45d, type: 3}
       propertyPath: m_IsActive
       value: 1

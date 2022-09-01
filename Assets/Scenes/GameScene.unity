@@ -12106,6 +12106,7 @@ MonoBehaviour:
   - {fileID: 1011688871381888059, guid: 6378d5391e4684e698b3776c3ce9be60, type: 3}
   - {fileID: 1011688871381888059, guid: d342afaf3d97b4d60b4a49e503baf500, type: 3}
   - {fileID: 1011688871381888059, guid: 505965fee78b240a9ab7f3c2e04933cc, type: 3}
+  _yollanacakLevel: 
 --- !u!1 &2067487225
 GameObject:
   m_ObjectHideFlags: 0
